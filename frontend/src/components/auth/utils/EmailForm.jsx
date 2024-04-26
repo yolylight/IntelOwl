@@ -56,7 +56,7 @@ export default function EmailForm({ onFormSubmit, apiCallback, ...restProps }) {
           {/* Email field */}
           <FormGroup>
             <Label className="required" htmlFor="EmailForm__email">
-              Email Address
+              Email地址
             </Label>
             <Input
               id="EmailForm__email"
@@ -88,7 +88,7 @@ export default function EmailForm({ onFormSubmit, apiCallback, ...restProps }) {
               color="darker"
               className="mx-auto"
             >
-              {formik.isSubmitting && <Spinner size="sm" />} Send
+              {formik.isSubmitting && <Spinner size="sm" />} 发送
             </Button>
           </FormGroup>
         </Form>

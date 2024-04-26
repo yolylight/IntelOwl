@@ -12,26 +12,26 @@ const versionText = VERSION;
 const logoBgImg = `url('${PUBLIC_URL}/logo-negative.png')`;
 const blogPosts = [
   {
-    title: "IntelOwl: Release v4.0.0",
+    title: "IntelOwl: 版本 v4.0.0",
     subText: "Certego Blog: v4.0.0 Announcement",
     date: "1st July 2022",
     link: "https://www.certego.net/en/news/intel-owl-release-v4-0-0/",
   },
   {
-    title: "IntelOwl: Release v3.0.0",
+    title: "IntelOwl: 版本 v3.0.0",
     subText: "Honeynet Blog: v3.0.0 Announcement",
     date: "13th September 2021",
     link: "https://www.honeynet.org/2021/09/13/intel-owl-release-v3-0-0/",
   },
   {
     title:
-      "Intel Owl – OSINT tool automates the intel-gathering process using a single API",
+      "Intel Owl – OSINT 工具利用单一应用程序接口实现情报收集过程自动化",
     subText: "Daily Swig: Interview with Matteo Lodi and Eshaan Bansal",
     date: "18th August 2020",
     link: "https://portswigger.net/daily-swig/intel-owl-osint-tool-automates-the-intel-gathering-process-using-a-single-api",
   },
   {
-    title: "New year, new tool: Intel Owl",
+    title: "新的一年，新的工具: Intel Owl",
     subText: "Certego Blog: First announcement",
     date: "2nd January 2020",
     link: "https://www.certego.net/en/news/new-year-new-tool-intel-owl/",
@@ -57,12 +57,7 @@ export default function Home() {
       {/* Content */}
       <Container id="home__content" className="mt-2">
         <ContentSection className="bg-body shadow lead">
-          Intel Owl is an Open Source Intelligence, or OSINT solution to get
-          threat intelligence data about a specific file, an IP or a domain from
-          a single API at scale. It integrates a number of analyzers available
-          online and a lot of cutting-edge malware analysis tools. It is for
-          everyone who needs a single point to query for info about a specific
-          file or observable.
+          Intel Owl 是一种开源情报或 OSINT 解决方案，可从单一 API 大规模获取有关特定文件、IP 或域的威胁情报数据。它集成了大量在线分析器和尖端恶意软件分析工具。它适用于需要单点查询特定文件或可观测信息的所有人.
         </ContentSection>
         <br />
         {/* blogposts */}
@@ -79,7 +74,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Read
+                阅读
               </a>
             </ContentSection>
           ))}

@@ -40,7 +40,7 @@ export default function EmailVerification() {
       {isKeyValid ? (
         <h5 className="text-center">
           <Spinner type="border" />
-          <p>Verifying...</p>
+          <p>验证中...</p>
         </h5>
       ) : (
         <h5 className="text-center">Error: Invalid key.</h5>

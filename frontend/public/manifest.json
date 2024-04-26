@@ -1,7 +1,7 @@
 {
   "short_name": "IntelOwl",
   "name": "IntelOwl",
-  "description": "Analyze files, domains, IPs in multiple ways from a single API at scale.",
+  "description": "可扩展的使用一个API分析文件, 域名, IP.",
   "theme_color": "#0b2b38",
   "background_color": "#00161f",
   "display": "standalone",

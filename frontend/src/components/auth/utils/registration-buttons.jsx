@@ -33,13 +33,13 @@ function FormPopoverBody(formProps, text, api) {
 }
 
 function EmailIcon() {
-  return Icon("Need Verification Email?");
+  return Icon("需要验证Email?");
 }
 
 function EmailFormPopoverBody(formProps) {
   return FormPopoverBody(
     formProps,
-    "We will shoot you an email with instructions to verify your email address.",
+    "我们将向您发送电子邮件，说明如何验证您的电子邮件地址.",
     resendVerificationMail,
   );
 }
@@ -60,13 +60,13 @@ export function ResendVerificationEmailButton() {
 }
 
 function PasswordIcon() {
-  return Icon("Forgot Password?");
+  return Icon("忘记密码?");
 }
 
 function PasswordFormPopoverBody(formProps) {
   return FormPopoverBody(
     formProps,
-    "We will shoot you an email with instructions to reset your password.",
+    "我们将向您发送一封电子邮件，说明如何重置密码.",
     requestPasswordReset,
   );
 }

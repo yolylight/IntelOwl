@@ -14,16 +14,14 @@ export function InviteOnlyAlert() {
     >
       <h5 className="text-info">
         <MdInfoOutline size="1.15rem" />
-        &nbsp;Sign up below to join the waitlist!
+        &nbsp;在下方注册，加入候补名单!
       </h5>
       <p>
-        Please note that IntelOwl is operated as an invite-only trust group.
-        Once you sign up, our team will reach out to you at the provided email
-        address.
+        请注意，IntelOwl 是一个只接受邀请的信任组.
+        注册后，我们的团队将通过您提供的电子邮件与您联系.
         <br />
         <span className="font-italic text-accent">
-          We recommend signing up with a business email address and not a
-          personal one to increase your chances of getting access.
+          我们建议您使用企业电子邮件地址而非个人电子邮件地址注册，以增加获得访问权限的机会.
         </span>
       </p>
     </Alert>
@@ -52,27 +50,27 @@ export function AfterRegistrationModalAlert(props) {
       backdrop="static"
       labelledBy="Registration successful modal"
     >
-      <ModalHeader toggle={toggle}>Registration successful! 🥳</ModalHeader>
+      <ModalHeader toggle={toggle}>注册成功! 🥳</ModalHeader>
       <ModalBody className="px-5">
         <>
           <section>
             <Alert color="success" className="text-center">
-              <h3>Thank you for signing up on IntelOwl! 🤝</h3>
+              <h3>感谢注册IntelOwl! 🤝</h3>
             </Alert>
           </section>
           <section className="mt-4">
             <strong className="h6">
-              <u>Next Steps:</u>
+              <u>下一步:</u>
             </strong>
             <ol className="mt-2">
               <li>
-                Verify your email address. We have already sent you a{" "}
-                <abbr title="Didn't receive ? No worries, request again.">
-                  link
+                验证您的电子邮件地址。我们已经向您发送了{" "}
+                <abbr title="没有收到？不用担心，再次发送.">
+                  链接
                 </abbr>
                 .
               </li>
-              <li>Our team will reach out to you soon afterwards.</li>
+              <li>我们的团队会尽快与您联系.</li>
             </ol>
           </section>
         </>
@@ -102,7 +100,7 @@ export function ConfigurationModalAlert(props) {
       backdrop="static"
       labelledBy="Configuration modal"
     >
-      <ModalHeader toggle={toggle}>Warning</ModalHeader>
+      <ModalHeader toggle={toggle}>警告</ModalHeader>
       <ModalBody className="px-5">
         <>
           <section>
@@ -112,11 +110,11 @@ export function ConfigurationModalAlert(props) {
           </section>
           <section className="mt-4">
             <p>
-              If you are an admin please check the{" "}
+              如果您是管理员，请检查{" "}
               <a href={INTELOWL_DOCS_URL} target="_blank" rel="noreferrer">
-                documentation
+                文档
               </a>{" "}
-              and correctly configure all the required variables.
+              并正确配置所有必要的变量.
             </p>
           </section>
         </>

@@ -23,7 +23,7 @@ const charts1 = [
   ["JobStatusBarChart", "Job: Status", JobStatusBarChart],
   [
     "JobObsNamePieChart",
-    "Job: Frequent IPs, Hash & Domains",
+    "Job: 常用 IP、哈希值和域名",
     JobObsNamePieChart,
   ],
   ["JobFileHashPieChart", "Job: Frequent Files", JobFileHashPieChart],
@@ -32,7 +32,7 @@ const charts2 = [
   ["JobTypeBarChart", "Job: Type", JobTypeBarChart],
   [
     "JobObsClassificationBarChart",
-    "Job: Observable Classification",
+    "Job: 可观察分类",
     JobObsClassificationBarChart,
   ],
   ["JobFileMimetypeBarChart", "Job: File Mimetype", JobFileMimetypeBarChart],
@@ -58,7 +58,7 @@ export default function Dashboard() {
   const { range, onTimeIntervalChange } = useTimePickerStore();
 
   // page title
-  useTitle("IntelOwl | Dashboard", { restoreOnUnmount: true });
+  useTitle("IntelOwl | 仪表盘", { restoreOnUnmount: true });
 
   const { organization } = useOrganizationStore(
     React.useCallback(
@@ -74,7 +74,7 @@ export default function Dashboard() {
       <div className="d-flex flex-wrap justify-content-between align-items-baseline mb-2">
         <div>
           <h3 className="fw-bold" id="Dashboard_title">
-            Dashboard
+            仪表盘
           </h3>
         </div>
         <div className="d-flex flex-wrap align-items-baseline ">
@@ -89,7 +89,7 @@ export default function Dashboard() {
                   }
                 }}
               >
-                GLOBAL
+                全局
               </Button>
               <Button
                 outline={!orgState}

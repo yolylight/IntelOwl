@@ -9,8 +9,8 @@ export function ComparePassword(password, confirmPassword) {
     confirmPassword.length > 0 &&
     password !== confirmPassword
   ) {
-    errors.password = "Passwords do not match.";
-    errors.confirmPassword = "Passwords do not match.";
+    errors.password = "密码不匹配.";
+    errors.confirmPassword = "密码不匹配.";
   }
   return errors;
 }
@@ -18,12 +18,12 @@ export function ComparePassword(password, confirmPassword) {
 export function PasswordValidator(password) {
   const errors = {};
   if (!password) {
-    errors.password = "Required";
+    errors.password = "必需";
   } else if (password.length < 12) {
-    errors.password = "Must be 12 characters or more";
+    errors.password = "至少12字符";
   } else if (!PASSWORD_REGEX.test(password)) {
     errors.password =
-      "The password is entirely numeric or contains special characters";
+      "密码完全是数字或包含特殊字符";
   }
   return errors;
 }
@@ -32,11 +32,11 @@ export function UserFieldsValidator(field, value) {
   const errors = {};
   // text fields
   if (!value) {
-    errors[field] = "Required";
+    errors[field] = "必需";
   } else if (value.length > 15) {
-    errors[field] = "Must be 15 characters or less";
+    errors[field] = "最多15字符";
   } else if (value.length < 4) {
-    errors[field] = "Must be 4 characters or more";
+    errors[field] = "最少4个字符";
   }
   return errors;
 }
@@ -55,11 +55,11 @@ export function ProfileValidator(field, value) {
   const errors = {};
   // text fields
   if (!value) {
-    errors[field] = "Required";
+    errors[field] = "必需";
   } else if (value.length > 30) {
-    errors[field] = "Must be 30 characters or less";
+    errors[field] = "最多30字符";
   } else if (value.length < 3) {
-    errors[field] = "Must be 3 characters or more";
+    errors[field] = "最少3字符";
   }
   return errors;
 }
@@ -67,9 +67,9 @@ export function ProfileValidator(field, value) {
 export function EmailValidator(email) {
   const errors = {};
   if (!email) {
-    errors.email = "Required";
+    errors.email = "必需";
   } else if (!EMAIL_REGEX.test(email)) {
-    errors.email = "Invalid email address";
+    errors.email = "邮件格式错误";
   }
   return errors;
 }
@@ -77,7 +77,7 @@ export function EmailValidator(email) {
 export function RecaptchaValidator(recaptcha) {
   const errors = {};
   if (recaptcha === "noKey" && RECAPTCHA_SITEKEY) {
-    errors.recaptcha = "Required";
+    errors.recaptcha = "必需";
   }
   return errors;
 }

@@ -39,10 +39,10 @@ const initialValues = {
 const onValidate = (values) => {
   const errors = {};
   if (!values.username) {
-    errors.username = "Required";
+    errors.username = "必需";
   }
   if (!values.password) {
-    errors.password = "Required";
+    errors.password = "必需";
   }
   // recaptcha
   const recaptchaErrors = RecaptchaValidator(values.recaptcha);
@@ -161,8 +161,7 @@ export default function Login() {
                   setIsOpen(!isOpen);
                 }}
               >
-                Check the Authentication section in the documentation for
-                enabling Google Authentication.
+                查看文档中的 "身份验证 "部分，了解启用 Google 身份验证的情况.
               </Tooltip>
             </div>
           </Row>

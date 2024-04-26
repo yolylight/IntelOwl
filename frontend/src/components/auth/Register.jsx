@@ -37,23 +37,23 @@ import {
 // constants
 const hearAboutUsChoices = [
   {
-    label: "Other",
+    label: "其它",
     value: "other",
   },
   {
-    label: "Search Engine (Google, DuckDuckGo, etc.)",
+    label: "搜索以前 (Google, DuckDuckGo, 等.)",
     value: "search_engine",
   },
   {
-    label: "Recommended by friend or colleague",
+    label: "朋友或同事推荐",
     value: "was_recommended",
   },
   {
-    label: "Social media",
+    label: "社交媒体",
     value: "social_media",
   },
   {
-    label: "Blog or Publication",
+    label: "博客或出版物",
     value: "blog_or_publication",
   },
 ];
@@ -221,7 +221,7 @@ export default function Register() {
         <ConfigurationModalAlert
           isOpen={showConfigurationModal}
           setIsOpen={setShowConfigurationModal}
-          title="The Registration Feature has not been configured!"
+          title="注册功能尚未配置!"
         />
       )}
       {showAfterRegistrationModal && (
@@ -244,7 +244,7 @@ export default function Register() {
         </Row>
         <ContentSection className="col-12 col-lg-10 col-xl-5 mx-auto">
           <Row>
-            <h3 className="font-weight-bold">Register</h3>
+            <h3 className="font-weight-bold">注册</h3>
           </Row>
           <hr />
           {/* Form */}
@@ -263,7 +263,7 @@ export default function Register() {
                       className="form-control-label required"
                       htmlFor="RegisterForm__first_name"
                     >
-                      First Name
+                      名
                     </Label>
                     <Input
                       id="RegisterForm__first_name"
@@ -288,7 +288,7 @@ export default function Register() {
                       className="form-control-label required"
                       htmlFor="RegisterForm__last_name"
                     >
-                      Last Name
+                      姓
                     </Label>
                     <Input
                       id="RegisterForm__last_name"
@@ -339,7 +339,7 @@ export default function Register() {
                       className="form-control-label required"
                       htmlFor="RegisterForm__username"
                     >
-                      Username
+                      用户名
                     </Label>
                     <Input
                       id="RegisterForm__username"
@@ -368,7 +368,7 @@ export default function Register() {
                       className="form-control-label required"
                       htmlFor="RegisterForm__password"
                     >
-                      Password
+                      密码
                     </Label>
                     <Input
                       id="RegisterForm__password"
@@ -393,7 +393,7 @@ export default function Register() {
                       className="form-control-label required"
                       htmlFor="RegisterForm__confirmPassword"
                     >
-                      Confirm Password
+                      确认密码
                     </Label>
                     <Input
                       id="RegisterForm__confirmPassword"
@@ -422,11 +422,11 @@ export default function Register() {
                     defaultChecked={passwordShown}
                     onChange={() => setPasswordShown(!passwordShown)}
                   />
-                  <Label check>Show password</Label>
+                  <Label check>显示密码</Label>
                 </FormGroup>
                 <Col sm={12} md={12} className="text-center standout alert">
-                  We ask you to provide the following information to better
-                  understand what you intend to use IntelOwl for
+                  我们请您提供以下信息，以便更好地
+                  了解您打算将 IntelOwl 用于哪些方面
                 </Col>
                 {/* Extra fields */}
                 <FormGroup row>
@@ -435,7 +435,7 @@ export default function Register() {
                       className="form-control-label required"
                       htmlFor="RegisterForm__company_name"
                     >
-                      Company/ Organization
+                      公司/ 组织
                     </Label>
                     <Input
                       id="RegisterForm__company_name"
@@ -461,7 +461,7 @@ export default function Register() {
                       className="form-control-label required"
                       htmlFor="RegisterForm__company_role"
                     >
-                      Role
+                      角色
                     </Label>
                     <Input
                       id="RegisterForm__company_role"
@@ -489,7 +489,7 @@ export default function Register() {
                       className="form-control-label"
                       htmlFor="RegisterForm__twitter_handle"
                     >
-                      Twitter Handle (optional)
+                      推特账号 (可选)
                     </Label>
                     <InputGroup>
                       <InputGroupText>@</InputGroupText>
@@ -514,7 +514,7 @@ export default function Register() {
                       className="form-control-label required"
                       htmlFor="RegisterForm__discover_from"
                     >
-                      How did you discover IntelOwl ?
+                     您如何知道IntelOwl ?
                     </Label>
                     <Select
                       id="RegisterForm__discover_from"
@@ -548,7 +548,7 @@ export default function Register() {
                     outline
                     className="mx-auto"
                   >
-                    {formik.isSubmitting && <Spinner size="sm" />} Register
+                    {formik.isSubmitting && <Spinner size="sm" />} 注册
                   </Button>
                 </FormGroup>
               </Form>

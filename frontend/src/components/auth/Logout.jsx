@@ -16,5 +16,5 @@ export default function Logout() {
     }
   }, [loading, logoutUser]);
 
-  return <FallBackLoading text="Logging you out..." />;
+  return <FallBackLoading text="正在将您退出..." />;
 }

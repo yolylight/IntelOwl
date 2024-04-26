@@ -9,7 +9,7 @@ export async function registerUser(body) {
     const resp = await axios.post(`${AUTH_BASE_URI}/register`, body);
     return resp;
   } catch (err) {
-    addToast("Registration failed!", err.parsedMsg, "danger", true);
+    addToast("注册失败!", err.parsedMsg, "danger", true);
     return Promise.reject(err);
   }
 }
@@ -18,14 +18,14 @@ export async function verifyEmail(body) {
   try {
     const resp = await axios.post(`${AUTH_BASE_URI}/verify-email`, body);
     addToast(
-      "Your email has been succesfully verified!",
+      "您的邮箱已验证!",
       null,
       "success",
       true,
     );
     return resp;
   } catch (err) {
-    addToast("Email verification failed!", err.parsedMsg, "danger", true);
+    addToast("邮箱验证失败!", err.parsedMsg, "danger", true);
     return Promise.reject(err);
   }
 }
@@ -33,10 +33,10 @@ export async function verifyEmail(body) {
 export async function resendVerificationMail(body) {
   try {
     const resp = await axios.post(`${AUTH_BASE_URI}/resend-verification`, body);
-    addToast("Verification email sent!", null, "success");
+    addToast("验证邮件已发送!", null, "success");
     return resp;
   } catch (err) {
-    addToast("Failed to send email!", err.parsedMsg, "danger", true);
+    addToast("发送邮件失败!", err.parsedMsg, "danger", true);
     return Promise.reject(err);
   }
 }
@@ -47,10 +47,10 @@ export async function requestPasswordReset(body) {
       `${AUTH_BASE_URI}/request-password-reset`,
       body,
     );
-    addToast("Email sent!", null, "success");
+    addToast("邮件已发送!", null, "success");
     return resp;
   } catch (err) {
-    addToast("Failed to send email!", err.parsedMsg, "danger", true);
+    addToast("邮件发送失败!", err.parsedMsg, "danger", true);
     return null;
   }
 }
@@ -58,10 +58,10 @@ export async function requestPasswordReset(body) {
 export async function resetPassword(body) {
   try {
     const resp = await axios.post(`${AUTH_BASE_URI}/reset-password`, body);
-    addToast("Password reset successfully!", null, "success", true);
+    addToast("密码重置成功!", null, "success", true);
     return resp;
   } catch (err) {
-    addToast("Password reset failed!", err.parsedMsg, "danger", true);
+    addToast("密码重置失败!", err.parsedMsg, "danger", true);
     return Promise.reject(err);
   }
 }

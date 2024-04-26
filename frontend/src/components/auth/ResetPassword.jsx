@@ -61,7 +61,7 @@ export default function ResetPassword() {
   console.debug("ResetPassword rendered!");
 
   // page title
-  useTitle("IntelOwl | Reset Password", { restoreOnUnmount: true });
+  useTitle("IntelOwl | 重置密码", { restoreOnUnmount: true });
 
   const [passwordShown, setPasswordShown] = React.useState(false);
 
@@ -98,7 +98,7 @@ export default function ResetPassword() {
     <ContentSection className="bg-body">
       {isKeyValid ? (
         <ContentSection className="col-lg-4 mx-auto">
-          <h3 className="font-weight-bold">Reset password</h3>
+          <h3 className="font-weight-bold">重置密码</h3>
           <hr />
           {/* Form */}
           <Formik
@@ -116,7 +116,7 @@ export default function ResetPassword() {
                       className="form-control-label required"
                       htmlFor="ResetPassword__password"
                     >
-                      New Password
+                      新密码
                     </Label>
                     <Input
                       id="ResetPassword__password"
@@ -143,7 +143,7 @@ export default function ResetPassword() {
                       className="form-control-label required"
                       htmlFor="ResetPassword__confirmPassword"
                     >
-                      Confirm New Password
+                      确认新密码
                     </Label>
                     <Input
                       id="ResetPassword__confirmPassword"
@@ -172,7 +172,7 @@ export default function ResetPassword() {
                     defaultChecked={passwordShown}
                     onChange={() => setPasswordShown(!passwordShown)}
                   />
-                  <Label check>Show password</Label>
+                  <Label check>显示密码</Label>
                 </FormGroup>
                 {/* reCAPTCHA */}
                 <FormGroup className="mt-3 d-flex">
@@ -192,7 +192,7 @@ export default function ResetPassword() {
                     outline
                     className="mx-auto"
                   >
-                    {formik.isSubmitting && <Spinner size="sm" />} Submit
+                    {formik.isSubmitting && <Spinner size="sm" />} 提交
                   </Button>
                 </FormGroup>
               </Form>

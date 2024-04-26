@@ -23,15 +23,15 @@ const initialValues = {
 const validateForm = (values) => {
   const errors = {};
   if (!values.old_password) {
-    errors.old_password = "Required";
+    errors.old_password = "必需";
   }
   if (!values.new_password) {
-    errors.new_password = "Required";
+    errors.new_password = "必需";
   }
   if (!values.confirmNewPassword) {
-    errors.confirmNewPassword = "Required";
+    errors.confirmNewPassword = "必需";
   } else if (values.confirmNewPassword !== values.new_password) {
-    errors.confirmNewPassword = "Passwords do not match";
+    errors.confirmNewPassword = "密码不匹配";
   }
   return errors;
 };
@@ -39,7 +39,7 @@ const validateForm = (values) => {
 // Component
 export default function ChangePassword() {
   // page title
-  useTitle("IntelOwl | Change Password", { restoreOnUnmount: true });
+  useTitle("IntelOwl | 修改密码", { restoreOnUnmount: true });
 
   // auth store
   const changePassword = useAuthStore(
@@ -51,9 +51,9 @@ export default function ChangePassword() {
     async (values, { setSubmitting }) => {
       try {
         await changePassword(values);
-        addToast("Password changed successfully!", null, "success");
+        addToast("密码修改成功!", null, "success");
       } catch (error) {
-        addToast("Failed to change password", error.parsedMsg, "danger", true);
+        addToast("密码修改失败", error.parsedMsg, "danger", true);
       } finally {
         setSubmitting(false);
       }
@@ -64,7 +64,7 @@ export default function ChangePassword() {
   return (
     <ContentSection className="bg-body">
       <Container className="col-12 col-lg-8 col-xl-4 mt-5 mb-5">
-        <h3 className="fw-bold">Change Password</h3>
+        <h3 className="fw-bold">修改密码</h3>
         <hr />
         <Formik
           initialValues={initialValues}
@@ -74,7 +74,7 @@ export default function ChangePassword() {
           {(formik) => (
             <Form>
               <FormGroup>
-                <Label for="oldPassword">Old Password</Label>
+                <Label for="oldPassword">原密码</Label>
                 <Input
                   id="oldPassword"
                   type="password"
@@ -87,7 +87,7 @@ export default function ChangePassword() {
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="newPassword">New Password</Label>
+                <Label for="newPassword">新密码</Label>
                 <Input
                   id="newPassword"
                   type="password"
@@ -100,7 +100,7 @@ export default function ChangePassword() {
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="confirmNewPassword">Confirm New Password</Label>
+                <Label for="confirmNewPassword">确认新密码</Label>
                 <Input
                   id="confirmNewPassword"
                   type="password"
@@ -119,7 +119,7 @@ export default function ChangePassword() {
                   color="primary"
                   disabled={formik.isSubmitting || !formik.isValid}
                 >
-                  {formik.isSubmitting && <Spinner size="sm" />} Change Password
+                  {formik.isSubmitting && <Spinner size="sm" />} 修改密码
                 </Button>
               </FormGroup>
             </Form>

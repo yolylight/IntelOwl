@@ -59,7 +59,7 @@ export default function Login() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   // page title
-  useTitle("IntelOwl | Login", { restoreOnUnmount: true });
+  useTitle("IntelOwl | 登录", { restoreOnUnmount: true });
 
   // local state
   const [passwordShown, setPasswordShown] = React.useState(false);
@@ -101,7 +101,7 @@ export default function Login() {
         <ConfigurationModalAlert
           isOpen={showConfigurationModal}
           setIsOpen={setShowConfigurationModal}
-          title="The Recaptcha has not been configured!"
+          title="尚未配置 Recaptcha!"
         />
       )}
       <Container className="col-12 col-lg-8 col-xl-4">
@@ -132,9 +132,9 @@ export default function Login() {
                         error.parsedMsg.includes("OAuth is not configured.")
                       )
                         addToast(
-                          "Login failed!",
-                          "OAuth is not configured. " +
-                            "Check documentation to set it up.",
+                          "登录失败!",
+                          "OAuth未配置. " +
+                            "查看文件进行设置.",
                           "danger",
                           true,
                         );
@@ -178,12 +178,12 @@ export default function Login() {
               <Form>
                 {/* username */}
                 <FormGroup>
-                  <Label for="LoginForm__username">Username</Label>
+                  <Label for="LoginForm__username">用户名</Label>
                   <Input
                     id="LoginForm__username"
                     type="text"
                     name="username"
-                    placeholder="Enter username"
+                    placeholder="输入用户名"
                     autoComplete="username"
                     onChange={formik.handleChange}
                   />
@@ -195,7 +195,7 @@ export default function Login() {
                     id="LoginForm__password"
                     type={passwordShown ? "text" : "password"}
                     name="password"
-                    placeholder="Enter password"
+                    placeholder="输入密码"
                     autoComplete="current-password"
                     onChange={formik.handleChange}
                   />
@@ -207,7 +207,7 @@ export default function Login() {
                     defaultChecked={passwordShown}
                     onChange={() => setPasswordShown(!passwordShown)}
                   />
-                  <Label check>Show password</Label>
+                  <Label check>显示密码</Label>
                 </FormGroup>
                 {/* reCAPTCHA */}
                 <FormGroup className="mt-3 d-flex">
@@ -226,7 +226,7 @@ export default function Login() {
                     color="primary"
                     outline
                   >
-                    {formik.isSubmitting && <Spinner size="sm" />} Login
+                    {formik.isSubmitting && <Spinner size="sm" />} 登录
                   </Button>
                 </FormGroup>
               </Form>

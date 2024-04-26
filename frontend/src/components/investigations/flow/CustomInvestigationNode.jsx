@@ -26,10 +26,10 @@ function CustomInvestigationNode({ data }) {
               rel="noreferrer"
               id="createJobBtn"
             >
-              <FaSearchPlus /> Create Job
+              <FaSearchPlus /> 创建任务
             </Button>
             <UncontrolledTooltip placement="top" target="createJobBtn">
-              Scan a new observable or a file to add to this investigation
+              扫描新的观测对象或文件，将其添加到本次调查中
             </UncontrolledTooltip>
           </div>
           <AddExistingJobPopover data={data} />

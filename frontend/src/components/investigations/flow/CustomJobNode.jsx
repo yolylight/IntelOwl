@@ -12,7 +12,7 @@ function CustomJobNode({ data }) {
     <>
       {/* Number of children */}
       <NodeToolbar position="top" align="end" isVisible offset={3}>
-        <div className="pe-2 text-secondary">{data.children.length} items</div>
+        <div className="pe-2 text-secondary">{data.children.length} 项目</div>
       </NodeToolbar>
       {/* Actions */}
       <NodeToolbar
@@ -30,7 +30,7 @@ function CustomJobNode({ data }) {
             target="_blank"
             rel="noreferrer"
           >
-            <AiOutlineLink /> Link
+            <AiOutlineLink /> 链接
           </Button>
           {data.isFirstLevel && <RemoveJob data={data} />}
         </div>
@@ -39,15 +39,15 @@ function CustomJobNode({ data }) {
           id={`job${data.id}-info`}
         >
           <div className="d-flex justify-content-between">
-            <span className="me-2">Job:</span>
+            <span className="me-2">任务:</span>
             <span className="text-accent">#{data.id}</span>
           </div>
           <div className="d-flex justify-content-between">
-            <span className="me-2">Name:</span>
+            <span className="me-2">名称:</span>
             <span className="text-accent">{data?.name}</span>
           </div>
           <div className="d-flex justify-content-between">
-            <span className="me-2">Playbook:</span>
+            <span className="me-2">剧本:</span>
             <span className="text-accent">{data?.playbook}</span>
           </div>
         </div>

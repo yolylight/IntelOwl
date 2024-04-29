@@ -20,7 +20,7 @@ export function VisualizerTooltip({
           text={copyText}
           className="mx-1 p-2 btn btn-secondary btn-sm"
         >
-          <MdContentCopy /> Copy
+          <MdContentCopy /> 复制
         </CopyToClipboardButton>
         <Button
           className="mx-1 p-2"
@@ -30,7 +30,7 @@ export function VisualizerTooltip({
           target="_blank"
           rel="noreferrer"
         >
-          <AiOutlineLink /> Link
+          <AiOutlineLink /> 链接
         </Button>
       </div>
       {description && (

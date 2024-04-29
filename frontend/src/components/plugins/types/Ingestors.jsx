@@ -20,7 +20,7 @@ export default function Ingestors() {
   return (
     <PluginWrapper
       heading="Ingestors"
-      description="Ingestors are designed to create jobs from an external source."
+      description="采集器旨在从外部源创建任务."
       stateSelector={stateSelector}
       columns={ingestorTableColumns}
       type={PluginsTypes.INGESTOR}

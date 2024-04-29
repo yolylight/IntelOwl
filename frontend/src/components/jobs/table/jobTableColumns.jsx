@@ -39,14 +39,14 @@ export const jobTableColumns = [
         <LinkOpenViewIcon
           id={id}
           href={`/jobs/${id}/${JobResultSections.VISUALIZER}`}
-          tooltip="View Job Report"
+          tooltip="查看任务报告"
         />
       </div>
     ),
     Filter: DefaultColumnFilter,
   },
   {
-    Header: "Created",
+    Header: "已创建",
     id: "received_request_time",
     accessor: "received_request_time",
     Cell: ({ value }) => (
@@ -55,7 +55,7 @@ export const jobTableColumns = [
     maxWidth: 100,
   },
   {
-    Header: "Finished",
+    Header: "已完成",
     id: "finished_analysis_time",
     accessor: "finished_analysis_time",
     Cell: ({ value }) =>
@@ -65,7 +65,7 @@ export const jobTableColumns = [
     maxWidth: 100,
   },
   {
-    Header: "User",
+    Header: "用户",
     id: "user",
     accessor: "user.username",
     Cell: ({ value, row: { original: job } }) => (
@@ -76,7 +76,7 @@ export const jobTableColumns = [
     maxWidth: 120,
   },
   {
-    Header: "Name",
+    Header: "名称",
     id: "name",
     accessor: (job) => job.observable_name || job.file_name,
     Cell: ({ value, row: { original: job } }) => (
@@ -96,7 +96,7 @@ export const jobTableColumns = [
     Filter: DefaultColumnFilter,
   },
   {
-    Header: "Type",
+    Header: "类型",
     id: "is_sample",
     accessor: (job) => job.is_sample,
     Cell: ({ value }) => (value ? JobTypes.FILE : JobTypes.OBSERVABLE),
@@ -145,7 +145,7 @@ export const jobTableColumns = [
           value={SelectedDropdownElementlabel}
           onChange={onChange}
         >
-          <option value="">All</option>
+          <option value="">所有</option>
           {selectOptions.map((value) => (
             <option
               key={`datatable-select-${id}-option-${value}`}
@@ -160,7 +160,7 @@ export const jobTableColumns = [
     selectOptions: [JobTypes.FILE, JobTypes.OBSERVABLE],
   },
   {
-    Header: "SubType",
+    Header: "子类型",
     id: "type",
     accessor: (job) => job.observable_classification || job.file_mimetype,
     disableSortBy: true,
@@ -182,7 +182,7 @@ export const jobTableColumns = [
     maxWidth: 90,
   },
   {
-    Header: "Tags",
+    Header: "标签",
     id: "tags",
     accessor: "tags",
     Cell: ({ value }) =>
@@ -195,7 +195,7 @@ export const jobTableColumns = [
     filterValueAccessorFn: (tags) => tags.map((tag) => tag.label),
   },
   {
-    Header: "Playbook Executed",
+    Header: "剧本已执行",
     id: "playbook_to_execute",
     accessor: (job) => job,
     Cell: ({ value: job }) => {
@@ -216,14 +216,14 @@ export const jobTableColumns = [
     maxWidth: 180,
   },
   {
-    Header: "Process Time (mm:ss)",
+    Header: "处理时间 (mm:ss)",
     id: "process_time",
     accessor: "process_time",
     Cell: ({ value }) => <span>{processTimeMMSS(value)}</span>,
     maxWidth: 125,
   },
   {
-    Header: "Status",
+    Header: "状态",
     id: "status",
     accessor: "status",
     Cell: ({ value }) => <StatusTag status={value} />,

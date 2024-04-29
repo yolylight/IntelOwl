@@ -83,16 +83,16 @@ export function JobIsRunningAlert({ job }) {
         className="text-info text-center"
       >
         <h6>
-          This job is currently <strong className="text-accent">running</strong>
+          该任务正在 <strong className="text-accent">运行</strong>
           .
         </h6>
         {alertElements.map((element) => (
           <div className="text-white">
-            STEP {element.step}: {element.type} RUNNING -
+            步骤 {element.step}: {element.type} 运行中 -
             <strong
               className={`text-${element.completed ? "success" : "info"}`}
             >
-              &nbsp;reported {element.report}
+              &nbsp;已报告 {element.report}
             </strong>
           </div>
         ))}
@@ -101,7 +101,7 @@ export function JobIsRunningAlert({ job }) {
             id="jobisrunningalert-iconbutton"
             Icon={MdPauseCircleOutline}
             size="xs"
-            title="Stop Job Process"
+            title="停止任务进程"
             color="danger"
             titlePlacement="top"
             onClick={() => killJob(job.id)}

@@ -87,7 +87,7 @@ export function InvestigationInfoCard({ investigation }) {
                   color=""
                   className="text-secondary"
                   onClick={() => setIsEditing(true)}
-                  title="Edit name"
+                  title="修改名称"
                   titlePlacement="top"
                 />
               </>
@@ -105,7 +105,7 @@ export function InvestigationInfoCard({ investigation }) {
               placement="left"
               target="InvestigationInfoCardDropDown"
             >
-              Toggle Investigation Metadata
+              切换调查元数据
             </UncontrolledTooltip>
           </Col>
         </Row>
@@ -117,10 +117,10 @@ export function InvestigationInfoCard({ investigation }) {
             className="align-items-start flex-wrap flex-lg-nowrap"
           >
             {[
-              ["Status", <StatusTag status={investigation.status} />],
+              ["状态", <StatusTag status={investigation.status} />],
               ["TLP", <TLPTag value={investigation.tlp} />],
               [
-                "Tags",
+                "标签",
                 investigation.tags.map(
                   (tag) =>
                     tag !== null && (
@@ -128,9 +128,9 @@ export function InvestigationInfoCard({ investigation }) {
                     ),
                 ),
               ],
-              ["User", investigation.owner],
+              ["用户", investigation.owner],
               [
-                "Start Time",
+                "开始时间",
                 <DateHoverable
                   id={`overview-start_time__${investigation.id}`}
                   value={investigation.start_time}

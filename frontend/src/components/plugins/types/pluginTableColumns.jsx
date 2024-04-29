@@ -74,7 +74,7 @@ function SelectColumnFilter({
       value={filterValue}
       onChange={onChange}
     >
-      <option value="">All</option>
+      <option value="">所有</option>
       {options.sort().map((value) => (
         <option key={`datatable-select-${id}-option-${value}`} value={value}>
           {value}
@@ -87,7 +87,7 @@ function SelectColumnFilter({
 // Common columns: these columns are shown for every type of plugin
 const pluginTableColumns = [
   {
-    Header: "Info",
+    Header: "信息",
     id: "info",
     accessor: (pluginConfig) => pluginConfig,
     Cell: ({ value }) => <PluginInfoPopoverIcon pluginInfo={value} />,
@@ -95,7 +95,7 @@ const pluginTableColumns = [
     maxWidth: 50,
   },
   {
-    Header: "Name",
+    Header: "名称",
     id: "name",
     accessor: "name",
     Cell: ({ value }) => (
@@ -105,7 +105,7 @@ const pluginTableColumns = [
     minWidth: 150,
   },
   {
-    Header: "Active",
+    Header: "激活",
     id: "active",
     accessor: (pluginConfig) =>
       !(pluginConfig.disabled || pluginConfig.orgPluginDisabled),
@@ -121,7 +121,7 @@ const pluginTableColumns = [
 export const analyzersTableColumns = [
   ...pluginTableColumns,
   {
-    Header: "Configured",
+    Header: "已配置",
     id: "configured",
     accessor: "verification.configured",
     Cell: ({ row: { original } }) => (
@@ -136,7 +136,7 @@ export const analyzersTableColumns = [
     maxWidth: 60,
   },
   {
-    Header: "Description",
+    Header: "描述",
     id: "description",
     accessor: "description",
     Cell: ({ value }) => <span>{markdownToHtml(value)}</span>,
@@ -145,7 +145,7 @@ export const analyzersTableColumns = [
     minWidth: 180,
   },
   {
-    Header: "Type",
+    Header: "类型",
     id: "type",
     accessor: "type",
     disableSortBy: true,
@@ -154,7 +154,7 @@ export const analyzersTableColumns = [
     maxWidth: 70,
   },
   {
-    Header: "Supported types",
+    Header: "支持的类型",
     id: "supported_types",
     accessor: (pluginConfig) => {
       let supported;
@@ -176,7 +176,7 @@ export const analyzersTableColumns = [
     minWidth: 200,
   },
   {
-    Header: "Maximum TLP",
+    Header: "最大TLP",
     id: "maximum_tlp",
     accessor: "maximum_tlp",
     Cell: ({ value }) => <TLPTag value={value} />,
@@ -185,7 +185,7 @@ export const analyzersTableColumns = [
     maxWidth: 80,
   },
   {
-    Header: "Actions",
+    Header: "动作",
     id: "actions",
     accessor: (analyzerConfig) => analyzerConfig,
     disableSortBy: true,
@@ -215,7 +215,7 @@ export const analyzersTableColumns = [
 export const connectorTableColumns = [
   ...pluginTableColumns,
   {
-    Header: "Configured",
+    Header: "已配置",
     id: "configured",
     accessor: "verification.configured",
     Cell: ({ row: { original } }) => (
@@ -230,7 +230,7 @@ export const connectorTableColumns = [
     maxWidth: 60,
   },
   {
-    Header: "Description",
+    Header: "描述",
     id: "description",
     accessor: "description",
     Cell: ({ value }) => <span>{markdownToHtml(value)}</span>,
@@ -239,7 +239,7 @@ export const connectorTableColumns = [
     minWidth: 300,
   },
   {
-    Header: "Maximum TLP",
+    Header: "最大TLP",
     id: "maximum_tlp",
     accessor: "maximum_tlp",
     Cell: ({ value }) => <TLPTag value={value} />,
@@ -248,7 +248,7 @@ export const connectorTableColumns = [
     maxWidth: 80,
   },
   {
-    Header: "Actions",
+    Header: "动作",
     id: "actions",
     accessor: (connectorConfig) => connectorConfig,
     disableSortBy: true,
@@ -277,7 +277,7 @@ export const connectorTableColumns = [
 export const pivotTableColumns = [
   ...pluginTableColumns,
   {
-    Header: "Configured",
+    Header: "已配置",
     id: "configured",
     accessor: "verification.configured",
     Cell: ({ row: { original } }) => (
@@ -292,7 +292,7 @@ export const pivotTableColumns = [
     maxWidth: 60,
   },
   {
-    Header: "Description",
+    Header: "描述",
     id: "description",
     accessor: "description",
     Cell: ({ value }) => <span>{markdownToHtml(value)}</span>,
@@ -301,7 +301,7 @@ export const pivotTableColumns = [
     minWidth: 200,
   },
   {
-    Header: "Playbook to execute",
+    Header: "要执行的剧本",
     id: "playbook",
     accessor: "playbook_to_execute",
     Cell: ({ value }) => (
@@ -311,7 +311,7 @@ export const pivotTableColumns = [
     maxWidth: 145,
   },
   {
-    Header: "Actions",
+    Header: "动作",
     id: "actions",
     accessor: (pivotConfig) => pivotConfig,
     disableSortBy: true,
@@ -340,7 +340,7 @@ export const pivotTableColumns = [
 export const playbookTableColumns = [
   ...pluginTableColumns,
   {
-    Header: "Description",
+    Header: "描述",
     id: "description",
     accessor: "description",
     Cell: ({ value }) => <span>{markdownToHtml(value)}</span>,
@@ -349,7 +349,7 @@ export const playbookTableColumns = [
     minWidth: 180,
   },
   {
-    Header: "Supported types",
+    Header: "支持类型",
     id: "supported_types",
     accessor: "type",
     Cell: ({ value }) => (
@@ -360,7 +360,7 @@ export const playbookTableColumns = [
     maxWidth: 120,
   },
   {
-    Header: "Analyzers",
+    Header: "分析器",
     id: "analyzers",
     accessor: (row) => row.analyzers,
     Cell: ({ value }) => (
@@ -374,7 +374,7 @@ export const playbookTableColumns = [
     maxWidth: 145,
   },
   {
-    Header: "Connectors",
+    Header: "连接器",
     id: "connectors",
     accessor: (row) => row.connectors,
     Cell: ({ value }) => (
@@ -387,7 +387,7 @@ export const playbookTableColumns = [
     Filter: SelectColumnFilter,
   },
   {
-    Header: "Pivots",
+    Header: "枢纽",
     id: "pivots",
     accessor: (row) => row.pivots,
     Cell: ({ value }) => (
@@ -397,7 +397,7 @@ export const playbookTableColumns = [
     Filter: SelectColumnFilter,
   },
   {
-    Header: "Visualizers",
+    Header: "可视化",
     id: "visualizers",
     accessor: (row) => row.visualizers,
     Cell: ({ value }) => (
@@ -410,7 +410,7 @@ export const playbookTableColumns = [
     Filter: SelectColumnFilter,
   },
   {
-    Header: "Actions",
+    Header: "动作",
     id: "actions",
     accessor: (playbookConfig) => playbookConfig,
     disableSortBy: true,
@@ -438,7 +438,7 @@ export const playbookTableColumns = [
 export const visualizerTableColumns = [
   ...pluginTableColumns,
   {
-    Header: "Configured",
+    Header: "已配置",
     id: "configured",
     accessor: "verification.configured",
     Cell: ({ row: { original } }) => (
@@ -453,7 +453,7 @@ export const visualizerTableColumns = [
     maxWidth: 60,
   },
   {
-    Header: "Description",
+    Header: "描述",
     id: "description",
     accessor: "description",
     Cell: ({ value }) => <span>{markdownToHtml(value)}</span>,
@@ -462,7 +462,7 @@ export const visualizerTableColumns = [
     minWidth: 280,
   },
   {
-    Header: "Playbook connected to",
+    Header: "剧本连接至",
     id: "playbooks",
     accessor: (row) => row.playbooks,
     Cell: ({ value }) => (
@@ -477,7 +477,7 @@ export const visualizerTableColumns = [
     minWidth: 170,
   },
   {
-    Header: "Actions",
+    Header: "动作",
     id: "actions",
     accessor: (visualizerConfig) => visualizerConfig,
     disableSortBy: true,
@@ -498,7 +498,7 @@ export const visualizerTableColumns = [
 export const ingestorTableColumns = [
   ...pluginTableColumns,
   {
-    Header: "Configured",
+    Header: "已配置",
     id: "configured",
     accessor: "verification.configured",
     Cell: ({ row: { original } }) => (
@@ -513,7 +513,7 @@ export const ingestorTableColumns = [
     maxWidth: 60,
   },
   {
-    Header: "Description",
+    Header: "描述",
     id: "description",
     accessor: "description",
     Cell: ({ value }) => <span>{markdownToHtml(value)}</span>,
@@ -522,7 +522,7 @@ export const ingestorTableColumns = [
     minWidth: 300,
   },
   {
-    Header: "Playbook to execute",
+    Header: "要执行的剧本",
     id: "playbook",
     accessor: "playbook_to_execute",
     Cell: ({ value }) => (
@@ -532,7 +532,7 @@ export const ingestorTableColumns = [
     maxWidth: 200,
   },
   {
-    Header: "Schedule",
+    Header: "计划",
     id: "schedule",
     accessor: "schedule",
     Cell: ({ value }) => (
@@ -545,7 +545,7 @@ export const ingestorTableColumns = [
     maxWidth: 145,
   },
   {
-    Header: "Actions",
+    Header: "动作",
     id: "actions",
     accessor: (ingestorConfig) => ingestorConfig,
     disableSortBy: true,

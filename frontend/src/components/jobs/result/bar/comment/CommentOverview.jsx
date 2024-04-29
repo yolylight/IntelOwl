@@ -77,7 +77,7 @@ export default function CommentOverview({ job, refetchComments }) {
 
         <Col xs="auto">
           <div className="d-flex-center">
-            <strong>Comments: {job.comments.length}</strong>
+            <strong>评论: {job.comments.length}</strong>
           </div>
         </Col>
       </Row>
@@ -85,7 +85,7 @@ export default function CommentOverview({ job, refetchComments }) {
       {/* write a comment */}
       <Row className="g-0 flex-no-shrink">
         <Col className="d-flex flex-column justify-content-center">
-          <strong>Create Comment</strong>
+          <strong>创建评论</strong>
 
           <Formik initialValues={{ content: "" }} onSubmit={onSubmit}>
             {({ handleSubmit }) => (
@@ -99,7 +99,7 @@ export default function CommentOverview({ job, refetchComments }) {
                 </FormGroup>
                 <div className="d-flex justify-content-end">
                   <Button type="submit" color="primary">
-                    Submit
+                    提交
                   </Button>
                 </div>
               </Form>
@@ -126,7 +126,7 @@ export default function CommentOverview({ job, refetchComments }) {
                     onClick={() => handleDeleteComment(comment.id)}
                     color="danger"
                   >
-                    Delete
+                    删除
                   </Button>
                 </div>
               )}

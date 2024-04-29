@@ -133,7 +133,7 @@ export default function VisualizerReport({ visualizerReport }) {
       <ErrorAlert
         error={{
           response: {
-            statusText: "An error occurred during the rendering",
+            statusText: "渲染时出现错误",
           },
           parsedMsg: visualizerReport.errors,
         }}
@@ -178,8 +178,7 @@ export default function VisualizerReport({ visualizerReport }) {
   if (levelElements.length === 0) {
     levelElements = (
       <p className="mb-0 text-center">
-        No data to show in the UI. You can consult the results in the raw
-        format.
+        用户界面无数据显示。您可以查看原始格式.
       </p>
     );
   }

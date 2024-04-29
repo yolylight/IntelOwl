@@ -20,7 +20,7 @@ export default function Pivots() {
   return (
     <PluginWrapper
       heading="Pivots"
-      description="Pivots are designed to create a job from another job"
+      description="枢轴旨在从一项任务创建另一项任务"
       stateSelector={stateSelector}
       columns={pivotTableColumns}
       type={PluginsTypes.PIVOT}

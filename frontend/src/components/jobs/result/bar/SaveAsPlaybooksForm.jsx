@@ -23,12 +23,12 @@ const onValidate = (values) => {
   const minLength = 3;
   const errors = {};
   if (!values.name) {
-    errors.name = "This field is required.";
+    errors.name = "此字段必填.";
   } else if (values.name.length < minLength) {
-    errors.name = `This field must be at least ${minLength} characters long`;
+    errors.name = `该字段最小 ${minLength} 字符`;
   }
   if (!values.description) {
-    errors.description = "This field is required.";
+    errors.description = "该字段必填.";
   }
   return errors;
 };
@@ -43,7 +43,7 @@ export function SaveAsPlaybookForm({ onFormSubmit }) {
         await saveJobAsPlaybook(values);
         onFormSubmit();
       } catch (error) {
-        addToast(<span>Error!</span>, error.parsedMsg, "warning");
+        addToast(<span>错误!</span>, error.parsedMsg, "warning");
       } finally {
         formik.setSubmitting(false);
       }
@@ -64,7 +64,7 @@ export function SaveAsPlaybookForm({ onFormSubmit }) {
             <Col>
               <div className="p-3">
                 <Label className="required" for="forminput-name" md={12}>
-                  Playbook name
+                  剧本名称
                 </Label>
                 <Input
                   autoFocus
@@ -81,7 +81,7 @@ export function SaveAsPlaybookForm({ onFormSubmit }) {
 
               <div className="p-3">
                 <Label className="required" for="forminput-description" md={12}>
-                  Playbook description
+                  剧本描述
                 </Label>
                 <textarea
                   id="forminput-description"
@@ -106,7 +106,7 @@ export function SaveAsPlaybookForm({ onFormSubmit }) {
                   size="sm"
                   md={2}
                 >
-                  {formik.isSubmitting && <Spinner size="sm" />}Send
+                  {formik.isSubmitting && <Spinner size="sm" />}发送
                 </Button>
               </div>
             </Col>
@@ -120,7 +120,7 @@ export function SaveAsPlaybookForm({ onFormSubmit }) {
 function SaveAsPlaybookIcon() {
   return (
     <span>
-      <IoMdSave className="me-2" /> Save As Playbook
+      <IoMdSave className="me-2" /> 保存为剧本
     </span>
   );
 }

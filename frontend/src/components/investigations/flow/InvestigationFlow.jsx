@@ -87,7 +87,7 @@ export function InvestigationFlow(props) {
                   opacity: 1,
                 }}
               />
-              <span>job is concluded</span>
+              <span>任务已完成</span>
             </div>
             <div className="d-flex justify-content-between">
               <hr
@@ -99,7 +99,7 @@ export function InvestigationFlow(props) {
                   opacity: 1,
                 }}
               />
-              <span>job is running</span>
+              <span>任务运行中</span>
             </div>
           </div>
         </Panel>

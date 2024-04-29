@@ -41,7 +41,7 @@ export function reportedPluginNumber(pluginList) {
 export function ReportedPluginTooltip({ id, pluginName }) {
   return (
     <UncontrolledTooltip placement="top" target={id}>
-      {pluginName} reported / {pluginName} executed
+      {pluginName} 已报告 / {pluginName} 已执行
     </UncontrolledTooltip>
   );
 }

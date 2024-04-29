@@ -36,7 +36,7 @@ export function PluginHealthCheckButton({ pluginName, pluginType_ }) {
         color="info"
         size="sm"
         Icon={!isLoading ? RiHeartPulseLine : SpinnerIcon}
-        title={!isLoading ? "Perform health check" : "Please wait..."}
+        title={!isLoading ? "进行健康检查" : "请等待..."}
         onClick={onClick}
         titlePlacement="top"
       />
@@ -86,9 +86,9 @@ export function OrganizationPluginStateToggle({
     disabled ? "Enable" : "Disable"
   } ${pluginName} for organization`;
   if (!isUserAdmin(user.username)) {
-    title = `${pluginName} is ${
-      disabled ? "disabled" : "enabled"
-    } for the organization`;
+    title = `${pluginName} 在组织中 ${
+      disabled ? "已禁用" : "已启用"
+    } `;
   }
 
   const onClick = async () => {
@@ -157,7 +157,7 @@ export function PlaybooksDeletionButton({ playbookName }) {
         color="danger"
         size="sm"
         Icon={MdDelete}
-        title="Delete playbook"
+        title="删除剧本"
         onClick={() => setShowModal(true)}
         titlePlacement="top"
       />
@@ -169,27 +169,27 @@ export function PlaybooksDeletionButton({ playbookName }) {
         size="lg"
         keyboard={false}
         backdrop="static"
-        labelledBy="Playbook deletion modal"
+        labelledBy="剧本删除模式"
         isOpen={showModal}
       >
         <ModalHeader className="mx-2" toggle={() => setShowModal(false)}>
-          <small className="text-info">Delete playbook</small>
+          <small className="text-info">删除剧本</small>
         </ModalHeader>
         <ModalBody className="d-flex justify-content-between my-2 mx-2">
           <div>
-            Do you want to delete the playbook:{" "}
+            是否要删除剧本:{" "}
             <span className="text-info">{playbookName}</span>?
           </div>
           <div className="d-flex justify-content-between">
             <Button className="mx-2" color="danger" size="sm" onClick={onClick}>
-              Delete
+              删除
             </Button>
             <Button
               className="mx-2"
               size="sm"
               onClick={() => setShowModal(false)}
             >
-              Cancel
+              取消
             </Button>
           </div>
         </ModalBody>
@@ -226,7 +226,7 @@ export function PluginPullButton({ pluginName, pluginType_ }) {
         color="info"
         size="sm"
         Icon={!isLoading ? MdFileDownload : SpinnerIcon}
-        title={!isLoading ? "Pull" : "Please wait..."}
+        title={!isLoading ? "拉取" : "请等待..."}
         onClick={onClick}
         titlePlacement="top"
       />

@@ -19,7 +19,7 @@ import { PluginStatuses } from "../../../constants/pluginConst";
 const tableProps = {
   columns: [
     {
-      Header: "Actions",
+      Header: "动作",
       id: "actions",
       accessor: (pluginReport) => pluginReport,
       maxWidth: 60,
@@ -34,7 +34,7 @@ const tableProps = {
                 onClick={() => killPlugin(job.id, plugin).then(refetch)}
                 color="accent"
                 size="xs"
-                title={`Kill ${plugin.type} run`}
+                title={`结束 ${plugin.type} 运行`}
                 titlePlacement="top"
                 className="me-2 border-0"
               />
@@ -47,7 +47,7 @@ const tableProps = {
                 onClick={() => retryPlugin(job.id, plugin).then(refetch)}
                 color="light"
                 size="xs"
-                title={`Retry ${plugin.type} run`}
+                title={`重试 ${plugin.type} 运行`}
                 titlePlacement="top"
                 className="border-0"
               />
@@ -56,7 +56,7 @@ const tableProps = {
       ),
     },
     {
-      Header: "Status",
+      Header: "状态",
       id: "status",
       accessor: "status",
       Cell: ({ value }) => <StatusTag status={value} />,
@@ -65,20 +65,20 @@ const tableProps = {
       maxWidth: 50,
     },
     {
-      Header: "Name",
+      Header: "名称",
       id: "name",
       accessor: "name",
       Filter: DefaultColumnFilter,
       maxWidth: 300,
     },
     {
-      Header: "Process Time (s)",
+      Header: "进程时间",
       id: "process_time",
       accessor: "process_time",
       maxWidth: 75,
     },
     {
-      Header: "Running Time",
+      Header: "运行时间",
       id: "running_time",
       accessor: (pluginReport) => pluginReport,
       disableSortBy: true,

@@ -43,7 +43,7 @@ export default function MyOrgPage() {
 
   // page title
   useTitle(
-    `IntelOwl | Organization ${
+    `IntelOwl | 组织 ${
       organization?.name ? `(${organization?.name})` : ""
     } `,
     { restoreOnUnmount: true },
@@ -75,12 +75,10 @@ export default function MyOrgPage() {
             <Alert color="secondary" className="mt-3 mx-auto">
               <section>
                 <h5 className="text-warning text-center">
-                  You are not a member of any organization.
+                  您不是任何组织的成员。
                 </h5>
                 <p className="text-center">
-                  You can choose to create a new organization or join an
-                  existing one by asking an organization owner to send you an
-                  invitation.
+                  您可以选择创建一个新组织，也可以要求组织所有者向您发出邀请，加入现有组织.
                 </p>
               </section>
               <section className="text-center">

@@ -69,7 +69,7 @@ export function JobOverview({
         name: "analyzer",
         nav: (
           <div className="d-flex-center">
-            <strong>Analyzers Report</strong>
+            <strong>分析报告</strong>
             <Badge id="analyzersReportsBadge" className="ms-2">
               {reportedPluginNumber(job.analyzer_reports)} /&nbsp;
               {job.analyzers_to_execute.length}
@@ -86,7 +86,7 @@ export function JobOverview({
         name: "connector",
         nav: (
           <div className="d-flex-center">
-            <strong>Connectors Report</strong>
+            <strong>连接器报告</strong>
             <Badge id="connectorsReportsBadge" className="ms-2">
               {reportedPluginNumber(job.connector_reports)} /&nbsp;
               {job.connectors_to_execute.length}
@@ -103,7 +103,7 @@ export function JobOverview({
         name: "pivot",
         nav: (
           <div className="d-flex-center">
-            <strong>Pivots Report</strong>
+            <strong>透视报告</strong>
             <Badge id="pivotsReportsBadge" className="ms-2">
               {reportedPluginNumber(job.pivot_reports)} /&nbsp;
               {job.pivots_to_execute.length}
@@ -120,7 +120,7 @@ export function JobOverview({
         name: "visualizer",
         nav: (
           <div className="d-flex-center">
-            <strong>Visualizers Report</strong>
+            <strong>可视化报告</strong>
             <Badge id="visualizersReportsBadge" className="ms-2">
               {reportedVisualizerNumber(
                 job.visualizer_reports,
@@ -141,7 +141,7 @@ export function JobOverview({
         name: "full",
         nav: (
           <div className="d-flex-center">
-            <strong>Full Report</strong>
+            <strong>完整报告</strong>
           </div>
         ),
         report: (
@@ -281,8 +281,7 @@ export function JobOverview({
         nav: null,
         report: (
           <p className="text-center">
-            No visualizers available. You can consult the results in the raw
-            format.{" "}
+            没有可视化工具。您可以查看原始格式.{" "}
           </p>
         ),
       });
@@ -306,7 +305,7 @@ export function JobOverview({
           >
             <Col>
               <h2>
-                <span className="me-2 text-secondary">Job #{job.id}</span>
+                <span className="me-2 text-secondary">任务 #{job.id}</span>
                 <StatusIcon status={job.status} className="small" />
               </h2>
             </Col>

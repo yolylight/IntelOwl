@@ -28,14 +28,14 @@ export const investigationTableColumns = [
         <LinkOpenViewIcon
           id={id}
           href={`/investigation/${id}`}
-          tooltip="View investigation report"
+          tooltip="查看调查报告"
         />
       </div>
     ),
     Filter: DefaultColumnFilter,
   },
   {
-    Header: "Created",
+    Header: "已创建",
     id: "start_time",
     accessor: "start_time",
     Cell: ({ value }) => (
@@ -44,7 +44,7 @@ export const investigationTableColumns = [
     maxWidth: 100,
   },
   {
-    Header: "User",
+    Header: "用户",
     id: "owner",
     accessor: "owner",
     Cell: ({ value, row: { original: investigation } }) => (
@@ -63,7 +63,7 @@ export const investigationTableColumns = [
     maxWidth: 120,
   },
   {
-    Header: "Name",
+    Header: "名称",
     id: "name",
     accessor: "name",
     Cell: ({ value, row: { original: investigation } }) => (
@@ -91,7 +91,7 @@ export const investigationTableColumns = [
     maxWidth: 90,
   },
   {
-    Header: "Tags",
+    Header: "标签",
     id: "tags",
     accessor: "tags",
     Cell: ({ value }) =>
@@ -111,7 +111,7 @@ export const investigationTableColumns = [
     filterValueAccessorFn: (tags) => tags.map((tag) => tag.label),
   },
   {
-    Header: "Jobs created",
+    Header: "已创建任务",
     id: "total_jobs",
     accessor: "total_jobs",
     Cell: ({ value }) => value,
@@ -119,7 +119,7 @@ export const investigationTableColumns = [
     maxWidth: 90,
   },
   {
-    Header: "Status",
+    Header: "状态",
     id: "status",
     accessor: "status",
     Cell: ({ value }) => <StatusTag status={value} />,

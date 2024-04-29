@@ -79,15 +79,15 @@ export default function PluginWrapper({
         <Col className="ps-0">
           <h1>
             {heading}&nbsp;
-            <small className="text-muted">{dataList?.length} total</small>
+            <small className="text-muted">总计 {dataList?.length}</small>
           </h1>
           <span className="text-muted">
-            {description} Fore more info check the{" "}
+            {description} 更多信息请检查{" "}
             <Link
               to="https://intelowl.readthedocs.io/en/latest/Usage.html#plugins-framework"
               target="_blank"
             >
-              official doc
+              官方文档
             </Link>
           </span>
         </Col>
@@ -97,8 +97,7 @@ export default function PluginWrapper({
         <div className="ps-3 d-flex">
           <TableHintIcon />
           <span className="ps-2 text-muted">
-            Note: Hover over a configured icon to view configuration status and
-            errors if any.
+            注意：将鼠标悬停在已配置的图标上，可查看配置状态和错误（如果有）.
           </span>
         </div>
         <div className="pt-1 pe-3 d-flex align-items-start justify-content-end">

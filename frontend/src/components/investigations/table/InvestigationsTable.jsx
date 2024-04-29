@@ -21,8 +21,8 @@ const toPassTableProps = {
   columns: investigationTableColumns,
   tableEmptyNode: (
     <>
-      <h4>No Data</h4>
-      <small className="text-muted">Note: Try changing time filter.</small>
+      <h4>无数据</h4>
+      <small className="text-muted">注意: 尝试修改时间筛选.</small>
     </>
   ),
 };
@@ -32,7 +32,7 @@ export default function InvestigationsTable() {
   console.debug("InvestigationsTable rendered!");
 
   // page title
-  useTitle("IntelOwl | Investigation History", { restoreOnUnmount: true });
+  useTitle("IntelOwl | 调查历史", { restoreOnUnmount: true });
 
   // consume zustand store
   const { range, fromTimeIsoStr, onTimeIntervalChange } = useTimePickerStore();
@@ -69,8 +69,8 @@ export default function InvestigationsTable() {
       <Row className="mb-2">
         <Col className="d-flex align-items-center">
           <h1 id="investigationHistory">
-            Investigations History&nbsp;
-            <small className="text-gray">{data?.count} total</small>
+            调查历史&nbsp;
+            <small className="text-gray">共计 {data?.count} </small>
           </h1>
           <div className="ms-2">
             <MdInfoOutline id="investigationstable-infoicon" fontSize="20" />
@@ -81,9 +81,8 @@ export default function InvestigationsTable() {
               fade={false}
               innerClassName="p-2 text-start text-nowrap md-fit-content"
             >
-              Investigations are a framework to connect jobs with each other,
-              correlate the findings and collaborate with teammates to reach
-              common goals.
+              调查是任务之间相互联系的框架,
+              对研究结果进行关联，并与队友合作以实现共同目标.
             </UncontrolledTooltip>
           </div>
         </Col>

@@ -75,7 +75,7 @@ export default function JobResult() {
 
   // page title
   useTitle(
-    `IntelOwl | Job (#${jobId}, ${
+    `IntelOwl | 任务 (#${jobId}, ${
       // eslint-disable-next-line no-nested-ternary
       job ? (job.is_sample ? job.file_name : job.observable_name) : ""
     })`,

@@ -20,7 +20,7 @@ export default function Analyzers() {
   return (
     <PluginWrapper
       heading="Analyzers"
-      description="Analyzers are the most important plugins in IntelOwl. They allow to perform data extraction on the observables and/or files that you would like to analyze."
+      description="分析器是 IntelOwl 中最重要的插件。通过它们，可以对要分析的观测值和/或文件进行数据提取."
       stateSelector={stateSelector}
       columns={analyzersTableColumns}
       type={PluginsTypes.ANALYZER}

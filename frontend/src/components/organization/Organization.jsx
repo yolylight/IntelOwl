@@ -16,7 +16,7 @@ const routes = [
     Title: () => (
       <span>
         <BsPeopleFill className="me-2" />
-        Organization
+        组织
       </span>
     ),
     Component: () => (
@@ -31,7 +31,7 @@ const routes = [
     Title: () => (
       <span>
         <BsSliders className="me-2" />
-        Organization Config
+        组织配置
       </span>
     ),
     Component: () => (
@@ -46,7 +46,7 @@ const routes = [
     Title: () => (
       <span>
         <SiMinutemailer />
-        &nbsp;Invitations
+        &nbsp;邀请
       </span>
     ),
     Component: () => (

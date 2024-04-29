@@ -20,7 +20,7 @@ export default function Connectors() {
   return (
     <PluginWrapper
       heading="Connectors"
-      description="Connectors are designed to run after every successful analysis which makes them suitable for automated threat-sharing. They support integration with other SIEM/SOAR projects, specifically aimed at Threat Sharing Platforms."
+      description="连接器的设计目的是在每次成功分析后运行，因此适用于自动威胁共享。它们支持与其他 SIEM/SOAR 项目集成，特别针对威胁共享平台."
       stateSelector={stateSelector}
       columns={connectorTableColumns}
       type={PluginsTypes.CONNECTOR}

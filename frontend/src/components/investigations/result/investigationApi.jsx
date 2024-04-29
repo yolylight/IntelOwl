@@ -13,7 +13,7 @@ import { prettifyErrors } from "../../../utils/api";
 export async function createInvestigation() {
   let success = false;
   const data = {
-    name: "Custom investigation",
+    name: "自定义调查",
     description: "",
     for_organization: true,
   };
@@ -22,7 +22,7 @@ export async function createInvestigation() {
     success = response.status === 201;
     if (success) {
       addToast(
-        <span>Created Investigation #{response.data.id}</span>,
+        <span>已创建调查 #{response.data.id}</span>,
         null,
         "success",
       );
@@ -30,7 +30,7 @@ export async function createInvestigation() {
     }
   } catch (error) {
     addToast(
-      "Failed to create new investigation",
+      "创建新调查失败",
       prettifyErrors(error),
       "warning",
     );
@@ -47,14 +47,14 @@ export async function deleteInvestigation(investigationId) {
     success = response.status === 204;
     if (success) {
       addToast(
-        <span>Deleted Investigation #{investigationId}</span>,
+        <span>已删除调查 #{investigationId}</span>,
         null,
         "info",
       );
     }
   } catch (error) {
     addToast(
-      `Failed to delete investigation #${investigationId}`,
+      `删除调查失败 #${investigationId}`,
       prettifyErrors(error),
       "warning",
     );
@@ -72,14 +72,14 @@ export async function updateInvestigation(investigationId, data) {
     success = response.status === 200;
     if (success) {
       addToast(
-        <span>Updated Investigation #{investigationId}</span>,
+        <span>已更新调查 #{investigationId}</span>,
         null,
         "info",
       );
     }
   } catch (error) {
     addToast(
-      `Failed to update investigation #${investigationId}`,
+      `更新调查失败 #${investigationId}`,
       prettifyErrors(error),
       "warning",
     );
@@ -99,7 +99,7 @@ export async function addJob(investigationId, jobId) {
     if (success) {
       addToast(
         <span>
-          Job #{jobId} added to the Investigation #{investigationId}
+          任务 #{jobId} 已添加到调查 #{investigationId}
         </span>,
         null,
         "success",
@@ -107,7 +107,7 @@ export async function addJob(investigationId, jobId) {
     }
   } catch (error) {
     addToast(
-      `Failed to add job #${jobId} to the investigation #${investigationId}`,
+      `添加任务 #${jobId} 到调查 #${investigationId} 失败`,
       prettifyErrors(error),
       "warning",
     );
@@ -126,7 +126,7 @@ export async function removeJob(investigationId, jobId) {
     if (success) {
       addToast(
         <span>
-          Job #{jobId} removed from the Investigation #{investigationId}
+          任务 #{jobId} 已从调查 #{investigationId} 移除
         </span>,
         null,
         "success",
@@ -134,7 +134,7 @@ export async function removeJob(investigationId, jobId) {
     }
   } catch (error) {
     addToast(
-      `Failed to remove job #${jobId} from the investigation #${investigationId}`,
+      `从调查 #${investigationId} 移除任务 #${jobId} 失败`,
       prettifyErrors(error),
       "warning",
     );
@@ -153,7 +153,7 @@ export async function addExistingJob(jobToAdd, currentInvestigationId) {
     }
   } catch (error) {
     addToast(
-      `Failed to add job #${jobToAdd} to the investigation #${currentInvestigationId}`,
+      `添加任务 #${jobToAdd} 到调查 #${currentInvestigationId} 失败`,
       prettifyErrors(error),
       "warning",
     );
@@ -163,15 +163,15 @@ export async function addExistingJob(jobToAdd, currentInvestigationId) {
   // case 1 - Job is already part of this investigation
   if (jobInvestigationId === currentInvestigationId) {
     addToast(
-      `Failed to add job #${jobToAdd} to the investigation #${currentInvestigationId}`,
-      "Job is already part of this investigation",
+      `添加任务 #${jobToAdd} 到调查 #${currentInvestigationId} 失败`,
+      "任务已经是调查一部分",
       "warning",
     );
   }
   // case 2 - job is already part of different investigation
   else if (jobInvestigationId) {
     const sure = await areYouSureConfirmDialog(
-      `Remove job #${jobToAdd} from investigation #${jobInvestigationId} and add into investigation #${currentInvestigationId}`,
+      `从调查 #${jobInvestigationId} 移除任务 #${jobToAdd} 并添加到调查 #${currentInvestigationId}`,
     );
     if (sure) {
       // remove job from previous investigation

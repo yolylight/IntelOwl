@@ -27,7 +27,7 @@ export function JobActionsBar({ job }) {
   const onDeleteBtnClick = async () => {
     const success = await deleteJob(job.id);
     if (!success) return;
-    addToast("Redirecting...", null, "secondary");
+    addToast("重定向中...", null, "secondary");
     setTimeout(() => navigate(-1), 250);
   };
 
@@ -55,14 +55,14 @@ export function JobActionsBar({ job }) {
   const handleRetry = async () => {
     if (job.is_sample) {
       addToast(
-        "Rescan File!",
-        "It's not possible to repeat a sample analysis",
+        "重新扫描文件!",
+        "不可以重复相同分析",
         "warning",
         false,
         2000,
       );
     } else {
-      addToast("Retrying the same job...", null, "spinner", false, 2000);
+      addToast("重试相同任务...", null, "spinner", false, 2000);
       const jobId = await createJob(
         [job.observable_name],
         job.observable_classification,
@@ -100,7 +100,7 @@ export function JobActionsBar({ job }) {
         color="darker"
         className="me-2"
         onClick={() => navigate(`/jobs/${job.id}/comments`)}
-        title="Comments"
+        title="评论"
         titlePlacement="top"
       />
       {job.permissions?.delete && (
@@ -111,7 +111,7 @@ export function JobActionsBar({ job }) {
           color="darker"
           className="me-2"
           onClick={onDeleteBtnClick}
-          title="Delete Job"
+          title="删除任务"
           titlePlacement="top"
         />
       )}
@@ -121,7 +121,7 @@ export function JobActionsBar({ job }) {
         onClick={handleRetry}
         color="light"
         size="sm"
-        title="Force run the same analysis"
+        title="强制运行相同分析"
         titlePlacement="top"
         className="me-2"
       />
@@ -134,7 +134,7 @@ export function JobActionsBar({ job }) {
           onClick={onDownloadSampleBtnClick}
         >
           <FaFileDownload />
-          &nbsp;Sample
+          &nbsp;示例
         </Button>
       )}
       <IconButton
@@ -144,7 +144,7 @@ export function JobActionsBar({ job }) {
         color="accent-2"
         className="ms-2"
         onClick={onDownloadReport}
-        title="Download report in json format"
+        title="下载json格式报告"
         titlePlacement="top"
       />
     </ContentSection>

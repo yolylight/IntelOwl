@@ -10,14 +10,14 @@ async function createOrganization(body) {
   try {
     const resp = await axios.post(BASE_URI_ORG, body);
     addToast(
-      `You are now the owner of ${resp?.data?.name} organization.`,
+      `你现在是组织 ${resp?.data?.name} 的拥有者.`,
       null,
       "success",
       true,
     );
     return resp;
   } catch (error) {
-    addToast("Failed!", error.parsedMsg, "danger", true);
+    addToast("失败!", error.parsedMsg, "danger", true);
     return Promise.reject(error);
   }
 }
@@ -26,7 +26,7 @@ async function deleteOrganization(orgName) {
   try {
     const resp = await axios.delete(BASE_URI_ORG);
     addToast(
-      `Organization ${orgName} was deleted.`,
+      `组织 ${orgName} 已删除.`,
       null,
       "success",
       true,
@@ -34,7 +34,7 @@ async function deleteOrganization(orgName) {
     );
     return resp;
   } catch (error) {
-    addToast("Failed!", error.parsedMsg, "danger", true);
+    addToast("失败!", error.parsedMsg, "danger", true);
     return Promise.reject(error);
   }
 }
@@ -45,14 +45,14 @@ async function removeMemberFromOrg(username) {
       username,
     });
     addToast(
-      `User @${username} was removed as a member.`,
+      `用户 @${username} 已被从成员移除.`,
       null,
       "success",
       true,
     );
     return resp;
   } catch (error) {
-    addToast("Failed!", error.parsedMsg, "danger", true);
+    addToast("失败!", error.parsedMsg, "danger", true);
     return Promise.reject(error);
   }
 }
@@ -61,14 +61,14 @@ async function leaveOrganization(orgName) {
   try {
     const resp = await axios.post(`${BASE_URI_ORG}/leave`);
     addToast(
-      `You are no longer a member of the ${orgName} organization.`,
+      `你不再是组织${orgName} 的成员.`,
       null,
       "success",
       true,
     );
     return resp;
   } catch (error) {
-    addToast("Failed!", error.parsedMsg, "danger", true);
+    addToast("失败!", error.parsedMsg, "danger", true);
     return Promise.reject(error);
   }
 }
@@ -78,10 +78,10 @@ async function promoteUserAdmin(username) {
     const resp = await axios.post(`${BASE_URI_ORG}/promote_admin`, {
       username,
     });
-    addToast(`User @${username} is now an admin.`, null, "success", true);
+    addToast(`用户 @${username}现在是管理员.`, null, "success", true);
     return resp;
   } catch (error) {
-    addToast("Failed!", error.parsedMsg, "danger", true);
+    addToast("失败!", error.parsedMsg, "danger", true);
     return Promise.reject(error);
   }
 }
@@ -90,14 +90,14 @@ async function removeUserAdmin(username) {
   try {
     const resp = await axios.post(`${BASE_URI_ORG}/remove_admin`, { username });
     addToast(
-      `User @${username} has been removed as admin.`,
+      `用户 @${username} 已被从管理员移除.`,
       null,
       "info",
       true,
     );
     return resp;
   } catch (error) {
-    addToast("Failed!", error.parsedMsg, "danger", true);
+    addToast("错误!", error.parsedMsg, "danger", true);
     return Promise.reject(error);
   }
 }
@@ -107,10 +107,10 @@ async function removeUserAdmin(username) {
 async function sendInvite(body) {
   try {
     const resp = await axios.post(`${BASE_URI_ORG}/invite`, body);
-    addToast("Invite Sent!", null, "success", true);
+    addToast("邀请已发送!", null, "success", true);
     return resp;
   } catch (error) {
-    addToast("Invite Failed!", error.parsedMsg, "danger", true);
+    addToast("邀请失败!", error.parsedMsg, "danger", true);
     return Promise.reject(error);
   }
 }
@@ -119,15 +119,15 @@ async function acceptInvitation(invId, orgName) {
   try {
     const resp = await axios.post(`${BASE_URI_INVITATION}/${invId}/accept`);
     addToast(
-      "Congratulations!",
-      `You are now a member of the ${orgName} organization`,
+      "祝贺!",
+      `你现在是组织 ${orgName} 的成员`,
       "success",
       true,
       6000,
     );
     return resp;
   } catch (error) {
-    addToast("Failed!", error.parsedMsg, "danger", true);
+    addToast("失败!", error.parsedMsg, "danger", true);
     return Promise.reject(error);
   }
 }
@@ -136,14 +136,14 @@ async function declineInvitation(invId, orgName) {
   try {
     const resp = await axios.post(`${BASE_URI_INVITATION}/${invId}/decline`);
     addToast(
-      `Invitation from ${orgName} organization was declined.`,
+      `组织 ${orgName} 的邀请已被拒绝.`,
       null,
       "info",
       true,
     );
     return resp;
   } catch (error) {
-    addToast("Failed!", error.parsedMsg, "danger", true);
+    addToast("错误!", error.parsedMsg, "danger", true);
     return Promise.reject(error);
   }
 }
@@ -152,14 +152,14 @@ async function deleteInvitation(invId, username) {
   try {
     const resp = await axios.delete(`${BASE_URI_INVITATION}/${invId}`);
     addToast(
-      `Invitation to user @${username} was deleted.`,
+      `邀请用户 @${username} 的请求已删除.`,
       null,
       "success",
       true,
     );
     return resp;
   } catch (error) {
-    addToast("Failed!", error.parsedMsg, "danger", true);
+    addToast("失败!", error.parsedMsg, "danger", true);
     return Promise.reject(error);
   }
 }

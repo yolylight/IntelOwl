@@ -34,7 +34,7 @@ export default function InvitationsList() {
   );
 
   // page title
-  useTitle(`IntelOwl | Invitations (${invitations?.length || 0}) `, {
+  useTitle(`IntelOwl | 邀请 (${invitations?.length || 0}) `, {
     restoreOnUnmount: true,
   });
 
@@ -63,20 +63,20 @@ export default function InvitationsList() {
       <Row className="mb-2">
         <Alert color="secondary" className="mx-auto">
           <span>
-            Being part of an organization has many perks.&nbsp;
+            加入一个组织有很多好处.&nbsp;
             <a
               href={`${INTELOWL_DOCS_URL}Advanced-Usage.html#organizations-and-user-management`}
               target="_blank"
               rel="noreferrer"
               className="link-primary"
             >
-              Learn more
+              了解更多
             </a>
             .
           </span>
         </Alert>
       </Row>
-      <h6>Invitations List</h6>
+      <h6>邀请列表</h6>
       {/* List */}
       <ContentSection className="bg-body border border-dark">
         <Loader
@@ -89,30 +89,30 @@ export default function InvitationsList() {
                       <Row className="mb-3">
                         <Col sm={6} xl={2}>
                           <small className="text-muted me-1">
-                            Organization
+                            组织
                           </small>
                           &nbsp;
                           {organization?.name}
                         </Col>
                         <Col sm={6} xl={2}>
-                          <small className="text-muted me-1">Invited by</small>
+                          <small className="text-muted me-1">邀请人</small>
                           &nbsp;
                           {organization?.owner?.username}
                         </Col>
                         <Col sm={6} xl={2}>
                           <small className="text-muted me-1">
-                            No. of Members
+                            成员数
                           </small>
                           &nbsp;
                           {organization?.members_count}
                         </Col>
                         <Col sm={6} xl={2}>
-                          <small className="text-muted me-1">Received</small>
+                          <small className="text-muted me-1">已收到</small>
                           <DateHoverable
                             id={`invlist-${id}`}
                             value={invitedAt}
                             format="hh:mm a MMM do, yyyy"
-                            title="Invite sent date"
+                            title="邀请发送日期"
                           />
                         </Col>
                         <Col sm={6} xl={2}>
@@ -126,7 +126,7 @@ export default function InvitationsList() {
                                 id={`accept-invite-btn-${id}`}
                                 className="text-success bg-body border border-dark"
                                 Icon={IoMdCheckmark}
-                                title="Accept Invitation"
+                                title="接受邀请"
                                 onClick={() =>
                                   actionDispatch(
                                     "accept",
@@ -139,7 +139,7 @@ export default function InvitationsList() {
                                 id={`decline-invite-btn-${id}`}
                                 className="text-danger bg-body border border-dark"
                                 Icon={IoMdClose}
-                                title="Decline Invitation"
+                                title="拒绝邀请"
                                 onClick={() =>
                                   actionDispatch(
                                     "decline",
@@ -157,7 +157,7 @@ export default function InvitationsList() {
                 )}
               </ol>
             ) : (
-              <h6 className="text-center text-muted">No pending invitations</h6>
+              <h6 className="text-center text-muted">没有待处理邀请</h6>
             )
           }
         />

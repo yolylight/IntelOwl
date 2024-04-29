@@ -29,7 +29,7 @@ export default function CommentResult() {
   }, [loading, job]);
 
   // page title
-  useTitle(`IntelOwl | Comments (#${jobId})`, { restoreOnUnmount: true });
+  useTitle(`IntelOwl | 评论 (#${jobId})`, { restoreOnUnmount: true });
 
   return (
     <Loader

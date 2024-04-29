@@ -45,13 +45,13 @@ export function JobInfoCard({ job }) {
                   }
                   id="investigationOverviewBtn"
                 >
-                  Investigation Overview
+                  调查概览
                 </Button>
                 <UncontrolledTooltip
                   placement="top"
                   target="investigationOverviewBtn"
                 >
-                  This job is part of the investigation #{job.investigation}
+                  该任务是调查 #{job.investigation} 的一部分
                 </UncontrolledTooltip>
               </>
             )}
@@ -96,7 +96,7 @@ export function JobInfoCard({ job }) {
               <ArrowToggleIcon isExpanded={isOpen} />
             </Button>
             <UncontrolledTooltip placement="left" target="JobInfoCardDropDown">
-              Toggle Job Metadata
+              切换任务元数据
             </UncontrolledTooltip>
           </Col>
         </Row>
@@ -108,13 +108,13 @@ export function JobInfoCard({ job }) {
             className="align-items-start flex-wrap flex-lg-nowrap"
           >
             {[
-              ["Status", <StatusTag status={job.status} />],
+              ["状态", <StatusTag status={job.status} />],
               ["TLP", <TLPTag value={job.tlp} />],
-              ["User", job.user?.username],
+              ["用户", job.user?.username],
               ["MD5", job.md5],
-              ["Process Time (mm:ss)", processTimeMMSS(job.process_time)],
+              ["处理时间 (mm:ss)", processTimeMMSS(job.process_time)],
               [
-                "Start Time",
+                "开始时间",
                 <DateHoverable
                   id={`overview-received_request_time__${job.id}`}
                   value={job.received_request_time}
@@ -122,7 +122,7 @@ export function JobInfoCard({ job }) {
                 />,
               ],
               [
-                "End Time",
+                "结束时间",
                 job.finished_analysis_time ? (
                   <DateHoverable
                     id={`overview-finished_analysis_time__${job.id}`}
@@ -146,7 +146,7 @@ export function JobInfoCard({ job }) {
           >
             {[
               [
-                "Playbook",
+                "剧本",
                 <PlaybookTag
                   key={job.playbook_to_execute}
                   playbook={job.playbook_to_execute}
@@ -154,13 +154,13 @@ export function JobInfoCard({ job }) {
                 />,
               ],
               [
-                "Tags",
+                "标签",
                 job.tags.map((tag) => (
                   <JobTag key={tag.label} tag={tag} className="me-2" />
                 )),
               ],
               [
-                "Warning(s)",
+                "警告",
                 <ul className="text-warning">
                   {job.warnings.map((error) => (
                     <li>{error}</li>
@@ -168,7 +168,7 @@ export function JobInfoCard({ job }) {
                 </ul>,
               ],
               [
-                "Error(s)",
+                "错误",
                 <ul className="text-danger">
                   {job.errors.map((error) => (
                     <li>{error}</li>

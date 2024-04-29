@@ -23,7 +23,7 @@ export async function deleteComment(commentId) {
     return Promise.resolve(resp);
   } catch (error) {
     console.error(error);
-    addToast("Failed!", prettifyErrors(error), "danger");
+    addToast("失败!", prettifyErrors(error), "danger");
     return Promise.reject(error);
   }
 }

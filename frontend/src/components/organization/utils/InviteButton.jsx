@@ -19,11 +19,11 @@ const onValidate = (values) => {
   const maxLength = 16;
   const errors = {};
   if (!values.username) {
-    errors.username = "This field is required.";
+    errors.username = "字段必需.";
   } else if (values.username.length < minLength) {
-    errors.username = `This field must be at least ${minLength} characters long`;
+    errors.username = `字段最小 ${minLength} 个字符`;
   } else if (values.username.length >= maxLength) {
-    errors.username = `This field must be no more than ${maxLength} characters long.`;
+    errors.username = `字段最多 ${maxLength} 个字符.`;
   }
   return errors;
 };
@@ -57,7 +57,7 @@ function InvitationForm({ onFormSubmit }) {
         <Form className="mx-2 my-3">
           <FormGroup row className="d-flex flex-wrap">
             <Label className="required" for="forminput-username" md={4}>
-              User&apos;s username
+              用户&apos;s 用户名
             </Label>
             <Col md={5}>
               <Input
@@ -77,7 +77,7 @@ function InvitationForm({ onFormSubmit }) {
                 size="sm"
                 md={2}
               >
-                {formik.isSubmitting && <Spinner size="sm" />}Send
+                {formik.isSubmitting && <Spinner size="sm" />}发送
               </Button>
             </Col>
           </FormGroup>
@@ -92,7 +92,7 @@ export function InviteButton({ onCreate }) {
   return (
     <PopupFormButton
       id="invitationform-icon"
-      title="Invite User"
+      title="邀请用户"
       titlePlacement="right"
       Icon={IoMdPersonAdd}
       Form={InvitationForm}

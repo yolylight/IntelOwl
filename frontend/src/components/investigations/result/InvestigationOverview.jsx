@@ -66,7 +66,7 @@ export function InvestigationOverview({
         <Col>
           <h2>
             <span className="me-2 text-secondary">
-              Investigation #{investigation.id}
+              调查 #{investigation.id}
             </span>
             <StatusIcon status={investigation.status} className="small" />
           </h2>
@@ -101,7 +101,7 @@ export function InvestigationOverview({
                 onChange={(event) => {
                   setInvestigationDescription(event.target.value);
                 }}
-                placeholder="Enter a description"
+                placeholder="输入描述"
                 value={investigationDescription}
                 style={{ minHeight: "200px", overflowY: "auto" }}
                 className="bg-dark"
@@ -116,7 +116,7 @@ export function InvestigationOverview({
                 color=""
                 className="text-secondary"
                 onClick={() => setIsEditing(true)}
-                title="Edit description"
+                title="编辑描述"
                 titlePlacement="top"
               />
               <div
@@ -129,7 +129,7 @@ export function InvestigationOverview({
                   whiteSpace: "pre-line",
                 }}
               >
-                {investigationDescription || "No description"}
+                {investigationDescription || "无描述"}
               </div>
             </>
           )}

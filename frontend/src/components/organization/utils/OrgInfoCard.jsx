@@ -32,16 +32,14 @@ export function OrgInfoCard() {
     const answer = await confirm({
       message: (
         <p>
-          Organization &quot;<u>{orgName}</u>&quot; will be deleted along with
-          every membership (user memberships, not user accounts) and invitations
-          too.
+          Organization &quot;<u>{orgName}</u>&quot; 会连同所有成员关系（用户成员关系，而非用户账户）和邀请也一并删除.
           <br />
           <span className="text-warning">
-            Are you sure you wish to proceed?
+            你确定要继续么?
           </span>
         </p>
       ),
-      confirmText: "Yes",
+      confirmText: "是",
       confirmColor: "primary",
       cancelColor: "link text-gray",
     });
@@ -72,7 +70,7 @@ export function OrgInfoCard() {
         {/* Established */}
         <div className="mx-5">
           <small className="text-info me-2">
-            <b>Established:</b>
+            <b>已建立:</b>
           </small>
           {establishedAt && (
             <DateHoverable
@@ -90,7 +88,7 @@ export function OrgInfoCard() {
           outline
           color="danger"
           className="border border-tertiary d-flex-end"
-          title="Delete Organization"
+          title="删除组织"
           Icon={MdDelete}
           onClick={deleteOrganizationCb}
         />

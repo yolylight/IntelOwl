@@ -17,8 +17,8 @@ export function generateJobNotification(observableName, jobId) {
       // notification icon
       setNotificationFavicon(true);
 
-      const notification = new Notification("IntelOwl analysis terminated!", {
-        body: `Observable: ${observableName} (job ${jobId}) reported.\n Click here to view the result!`,
+      const notification = new Notification("IntelOwl 分析已结束!", {
+        body: `可观测: ${observableName} (job ${jobId}) 已报告.\n 点此查看结果!`,
         icon: `${PUBLIC_URL}/logo-blue.png`,
       });
 

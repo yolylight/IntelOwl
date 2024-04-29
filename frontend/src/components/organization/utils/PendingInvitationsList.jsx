@@ -41,9 +41,9 @@ export function PendingInvitationsList() {
         {/* Header */}
         <section className="h3 d-flex justify-content-between align-items-end flex-column flex-sm-row">
           <div>
-            Pending Invitations&nbsp;
+            待发邀请&nbsp;
             <small className="text-muted">
-              {pendingInvitations?.length} total
+              总计 {pendingInvitations?.length}
             </small>
           </div>
           <div>
@@ -70,14 +70,14 @@ export function PendingInvitationsList() {
                           value={invitedAt}
                           format="do MMMM yyyy"
                           className="text-secondary user-select-none"
-                          title="Invite sent date"
+                          title="邀请发送日期"
                         />
                       </Col>
                       <Col sm={2} className="text-end">
                         {isUserAdmin(user.username) && (
                           <MdDelete
                             className="text-danger pointer small"
-                            title="delete invitation"
+                            title="删除邀请"
                             onClick={() =>
                               deleteInvitationCb(id, invitedUser?.username)
                             }

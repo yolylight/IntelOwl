@@ -20,7 +20,7 @@ export default function Visualizers() {
   return (
     <PluginWrapper
       heading="Visualizers"
-      description="Visualizers are designed to run after the analyzers and the connectors. The visualizer adds logic after the computations, allowing to show the final result in a different way than merely the list of reports."
+      description="可视化用于在分析器和连接器之后运行。可视化器在计算之后添加了逻辑，从而能以不同于报告列表的方式显示最终结果。."
       stateSelector={stateSelector}
       columns={visualizerTableColumns}
       type={PluginsTypes.VISUALIZER}

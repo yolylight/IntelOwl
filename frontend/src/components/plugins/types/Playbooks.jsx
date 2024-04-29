@@ -20,7 +20,7 @@ export default function Playbooks() {
   return (
     <PluginWrapper
       heading="Playbooks"
-      description="Playbooks are designed to be easy to share sequence of running Plugins (Analyzers, Connectors, ...) on a particular kind of observable."
+      description="剧本的设计目的是便于共享在特定类型的可观测对象上运行插件（分析器、连接器......）的序列."
       stateSelector={stateSelector}
       columns={playbookTableColumns}
       type={PluginsTypes.PLAYBOOK}

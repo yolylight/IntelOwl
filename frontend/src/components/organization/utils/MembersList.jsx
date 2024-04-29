@@ -58,17 +58,17 @@ export function MembersList() {
       const answer = await confirm({
         message: (
           <p>
-            User <u>@{username}</u> will be removed from your organization and
-            will no longer have access to the <b>rules</b> and{" "}
-            <b>submissions</b>
-            &nbsp;of your organization members.
+            用户 <u>@{username}</u> 将被从您的组织中删除
+            并将无法再访问您组织成员的 <b>规则</b> 和{" "}
+            <b>提交内容</b>
+            &nbsp;
             <br />
             <span className="text-warning">
-              Are you sure you wish to proceed?
+              你确认要继续吗?
             </span>
           </p>
         ),
-        confirmText: "Yes",
+        confirmText: "是",
         confirmColor: "primary",
         cancelColor: "link text-gray",
       });
@@ -83,16 +83,15 @@ export function MembersList() {
     const answer = await confirm({
       message: (
         <p>
-          You will be removed from the <u>{orgName}</u> organization and will no
-          longer have access to the <b>rules</b> and <b>submissions</b>
-          &nbsp;of the organization members.
+          你将会从组织<u>{orgName}</u> 移除并且不能
+          访问组织成员的 <b>规则</b> 和 <b>提交内容</b>
           <br />
           <span className="text-warning">
-            Are you sure you wish to proceed?
+            你确定要继续吗?
           </span>
         </p>
       ),
-      confirmText: "Yes",
+      confirmText: "是",
       confirmColor: "primary",
       cancelColor: "link text-gray",
     });
@@ -127,8 +126,8 @@ export function MembersList() {
         {/* Header */}
         <section className="h3 d-flex justify-content-between align-items-end flex-column flex-sm-row">
           <div>
-            Members&nbsp;
-            <small className="text-muted">{membersCount} total</small>
+            成员&nbsp;
+            <small className="text-muted">共计 {membersCount}</small>
           </div>
         </section>
         <hr />
@@ -148,7 +147,7 @@ export function MembersList() {
                     className="border-bottom border-dark py-1"
                   >
                     <Row>
-                      <Col sm={5} title="Name and Username">
+                      <Col sm={5} title="名称和用户名">
                         {fullName}&nbsp;
                         <span
                           id={`memberlist-username-${username}`}
@@ -157,7 +156,7 @@ export function MembersList() {
                           (@{username})
                         </span>
                       </Col>
-                      <Col sm={3} title="Joining Date">
+                      <Col sm={3} title="加入日期">
                         <DateHoverable
                           value={joined}
                           format="do MMMM yyyy"
@@ -170,7 +169,7 @@ export function MembersList() {
                             id={`memberlist-badge-owner-${username}`}
                             color="primary"
                           >
-                            Owner
+                            拥有者
                           </Badge>
                         )}
                         {owner?.username !== username && isAdmin && (
@@ -196,8 +195,8 @@ export function MembersList() {
                                 style={{ cursor: "pointer" }}
                                 title={
                                   isUserAdmin(username)
-                                    ? "Remove admin"
-                                    : "Promote admin"
+                                    ? "移除管理员"
+                                    : "提升管理员"
                                 }
                                 onClick={() =>
                                   isUserAdmin(username)
@@ -212,7 +211,7 @@ export function MembersList() {
                                 <FaUserMinus
                                   id={`memberslist-removemember-btn-${username}`}
                                   className="text-danger pointer small mx-3"
-                                  title="remove member"
+                                  title="移除用户"
                                   onClick={() => removeMemberCb(username)}
                                 />
                               )}
@@ -220,7 +219,7 @@ export function MembersList() {
                               <FaUserMinus
                                 id="memberslist-leaveorg-btn"
                                 className="text-danger pointer small mx-3"
-                                title="Leave organization"
+                                title="离开组织"
                                 onClick={() => leaveOrganizationCb}
                               />
                             )}

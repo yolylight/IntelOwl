@@ -8,14 +8,14 @@ function PlaybookExecutedInfoCard({ job }) {
   return (
     <Card className="border-dark p-0">
       <CardHeader className="d-flex align-items-center bg-body p-2 h6">
-        <span>{job.playbook_to_execute || "Custom analysis"}</span>
+        <span>{job.playbook_to_execute || "自定义分析"}</span>
       </CardHeader>
       <CardBody className="bg-darker border-top border-tertiary">
         <div className="d-flex flex-column justify-content-center">
-          <span>{job.analyzers_to_execute.length} analyzers</span>
-          <span>{job.connectors_to_execute.length} connectors</span>
-          <span>{job.pivots_to_execute.length} pivots</span>
-          <span>{job.visualizers_to_execute.length} visualizers</span>
+          <span>{job.analyzers_to_execute.length} 分析器</span>
+          <span>{job.connectors_to_execute.length} 连接器</span>
+          <span>{job.pivots_to_execute.length} 透视</span>
+          <span>{job.visualizers_to_execute.length} 可视化</span>
         </div>
       </CardBody>
     </Card>

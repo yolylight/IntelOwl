@@ -25,7 +25,7 @@ export async function saveJobAsPlaybook(values) {
     if (success) {
       addToast(
         <span>
-          Playbook with name {response.data.name} created with success
+          成功创建剧本 {response.data.name}
         </span>,
         null,
         "info",
@@ -33,7 +33,7 @@ export async function saveJobAsPlaybook(values) {
     }
   } catch (error) {
     addToast(
-      <span>Failed creation of playbook with name {values.name}</span>,
+      <span>剧本 {values.name} 创建失败</span>,
       error.parsedMsg,
       "warning",
     );

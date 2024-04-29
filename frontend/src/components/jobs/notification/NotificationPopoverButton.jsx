@@ -34,7 +34,7 @@ export default function NotificationPopoverButton() {
     <>
       <IconButton
         id="notifications-btn"
-        title="Notifications"
+        title="通知"
         titlePlacement="bottom"
         size="sm"
         color="accent-1"
@@ -53,7 +53,7 @@ export default function NotificationPopoverButton() {
       >
         <Tabs
           className="mx-auto standout mt-2"
-          tabTitles={["Unread", "Read"]}
+          tabTitles={["未读", "已读"]}
           renderables={[
             // Unread
             () => (

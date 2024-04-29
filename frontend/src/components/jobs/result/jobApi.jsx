@@ -14,25 +14,25 @@ export async function downloadJobSample(jobId) {
     });
     blob = new Blob([resp.data]);
   } catch (error) {
-    addToast("Failed", error.parsedMsg, "warning");
+    addToast("失败", error.parsedMsg, "warning");
   }
   return blob;
 }
 
 export async function killJob(jobId) {
-  const sure = await areYouSureConfirmDialog(`kill job #${jobId}`);
+  const sure = await areYouSureConfirmDialog(`结束任务 #${jobId}`);
   if (!sure) return Promise.reject();
   let success = false;
   try {
     const response = await axios.patch(`${JOB_BASE_URI}/${jobId}/kill`);
     success = response.status === 204;
     if (success) {
-      addToast(<span>Sent kill request for job #{jobId}</span>, null, "info");
+      addToast(<span>发送任务 #{jobId} 的结束请求</span>, null, "info");
     }
   } catch (error) {
     addToast(
       <span>
-        Failed. Operation: <em>kill job #{jobId}</em>
+        失败. 操作: <em>结束任务 #{jobId}</em>
       </span>,
       error.parsedMsg,
       "warning",
@@ -42,19 +42,19 @@ export async function killJob(jobId) {
 }
 
 export async function deleteJob(jobId) {
-  const sure = await areYouSureConfirmDialog(`delete job #${jobId}`);
+  const sure = await areYouSureConfirmDialog(`删除任务 #${jobId}`);
   if (!sure) return Promise.reject();
   let success = false;
   try {
     const response = await axios.delete(`${JOB_BASE_URI}/${jobId}`);
     success = response.status === 204;
     if (success) {
-      addToast(<span>Deleted Job #{jobId}</span>, null, "info");
+      addToast(<span>已删除任务 #{jobId}</span>, null, "info");
     }
   } catch (error) {
     addToast(
       <span>
-        Failed. Operation: <em>delete job #{jobId}</em>
+        失败. 操作: <em>删除任务 #{jobId}</em>
       </span>,
       error.parsedMsg,
       "warning",
@@ -65,7 +65,7 @@ export async function deleteJob(jobId) {
 
 export async function killPlugin(jobId, plugin) {
   const sure = await areYouSureConfirmDialog(
-    `kill ${plugin.type} '${plugin.name}'`,
+    `结束 ${plugin.type} '${plugin.name}'`,
   );
   if (!sure) return Promise.reject();
   let success = false;
@@ -77,7 +77,7 @@ export async function killPlugin(jobId, plugin) {
     if (success) {
       addToast(
         <span>
-          Kill request sent for {plugin.type} <em>{plugin.name}</em>
+          发送 {plugin.type} <em>{plugin.name}</em> 结束请求
         </span>,
         null,
         "info",
@@ -86,7 +86,7 @@ export async function killPlugin(jobId, plugin) {
   } catch (error) {
     addToast(
       <span>
-        Failed. Operation: kill {plugin.type} <em>{plugin.name}</em>
+        失败. 操作: 结束 {plugin.type} <em>{plugin.name}</em>
       </span>,
       error.parsedMsg,
       "warning",
@@ -109,7 +109,7 @@ export async function retryPlugin(jobId, plugin) {
     if (success) {
       addToast(
         <span>
-          Retry request sent for {plugin.type} <em>{plugin.name}</em>
+          重试发送 {plugin.type} <em>{plugin.name}</em> 请求
         </span>,
         null,
         "info",
@@ -118,7 +118,7 @@ export async function retryPlugin(jobId, plugin) {
   } catch (error) {
     addToast(
       <span>
-        Failed. Operation: retry {plugin.type} <em>{plugin.name}</em>
+        失败. 操作: 重试 {plugin.type} <em>{plugin.name}</em>
       </span>,
       error.parsedMsg,
       "warning",

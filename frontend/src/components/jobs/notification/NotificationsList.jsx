@@ -51,7 +51,7 @@ export default function NotificationsList({ notifications, refetchFn }) {
                 size="xs"
                 id={`notification-read-btn-${notif.id}`}
                 Icon={IoCheckmarkDoneSharp}
-                title="mark as read"
+                title="标记为已读"
                 className="ms-auto text-success"
                 color="dark"
                 outline
@@ -63,7 +63,7 @@ export default function NotificationsList({ notifications, refetchFn }) {
       ))}
     </ListGroup>
   ) : (
-    <h6 className="mt-1 text-center text-muted">No items</h6>
+    <h6 className="mt-1 text-center text-muted">无项目</h6>
   );
 }
 

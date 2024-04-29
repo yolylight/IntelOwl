@@ -20,7 +20,7 @@ export function InvestigationActionsBar({ investigation }) {
     if (!sure) return null;
     const success = await deleteInvestigation(investigation.id);
     if (!success) return null;
-    addToast("Redirecting...", null, "secondary");
+    addToast("重定向中...", null, "secondary");
     setTimeout(() => navigate(-1), 250);
     return null;
   };
@@ -33,7 +33,7 @@ export function InvestigationActionsBar({ investigation }) {
         size="sm"
         color="darker"
         onClick={onDeleteBtnClick}
-        title="Delete Investigation"
+        title="删除调查"
         titlePlacement="top"
       />
     </ContentSection>

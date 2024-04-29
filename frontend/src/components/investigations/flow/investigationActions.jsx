@@ -27,7 +27,7 @@ export function AddExistingJobPopover({ data }) {
   return (
     <div>
       <Button className="mx-1 p-2" size="sm" id="addExistingJobBtn">
-        <BsFillPlusCircleFill /> Add existing job
+        <BsFillPlusCircleFill /> 添加已存在任务
       </Button>
       <UncontrolledPopover
         trigger="click"
@@ -43,7 +43,7 @@ export function AddExistingJobPopover({ data }) {
             name="textArea"
             type="textarea"
             onChange={(event) => setJobToAdd(event.target.value)}
-            placeholder="Enter a job id"
+            placeholder="输入任务id"
             style={{ maxHeight: "40px", maxWidth: "60vh" }}
             className="bg-dark"
           />
@@ -54,7 +54,7 @@ export function AddExistingJobPopover({ data }) {
             disabled={!jobToAdd}
             onClick={() => onClick()}
           >
-            Add
+            添加
           </Button>
         </div>
       </UncontrolledPopover>
@@ -83,14 +83,14 @@ export function RemoveJob({ data }) {
         size="sm"
         onClick={() => onClick()}
       >
-        <MdOutlineCancel color="red" /> Remove Branch
+        <MdOutlineCancel color="red" /> 移除分支
       </Button>
       <UncontrolledTooltip
         target="investigation-removejobbtn"
         placement="top"
         fade={false}
       >
-        Remove job #{data.id} and all its children from the investigation
+        从调查移除任务 #{data.id} 以及它的所有分支
       </UncontrolledTooltip>
     </>
   );

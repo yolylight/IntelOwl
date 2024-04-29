@@ -24,8 +24,8 @@ const toPassTableProps = {
   columns: jobTableColumns,
   tableEmptyNode: (
     <>
-      <h4>No Data</h4>
-      <small className="text-muted">Note: Try changing time filter.</small>
+      <h4>无数据</h4>
+      <small className="text-muted">注意: 尝试更改时间筛选.</small>
     </>
   ),
 };
@@ -39,7 +39,7 @@ export default function JobsTable() {
   console.debug("JobsTable rendered!");
 
   // page title
-  useTitle("IntelOwl | Jobs History", { restoreOnUnmount: true });
+  useTitle("IntelOwl | 任务历史", { restoreOnUnmount: true });
 
   // consume zustand store
   const { range, fromTimeIsoStr, onTimeIntervalChange } = useTimePickerStore();
@@ -92,8 +92,8 @@ export default function JobsTable() {
           <Row className="mb-2">
             <Col className="d-flex align-items-center">
               <h1 id="jobsHistory">
-                Jobs History&nbsp;
-                <small className="text-gray">{data?.count} total</small>
+                任务历史&nbsp;
+                <small className="text-gray">总计 {data?.count}</small>
               </h1>
               <div className="ms-2">
                 <MdInfoOutline id="jobstable-infoicon" fontSize="20" />
@@ -105,7 +105,7 @@ export default function JobsTable() {
                   fade={false}
                   innerClassName="p-2 text-start text-nowrap md-fit-content"
                 >
-                  Jobs are simple analysis of an observable or a file.
+                  任务是对可观测对象或文件的简单分析.
                 </UncontrolledTooltip>
               </div>
             </Col>

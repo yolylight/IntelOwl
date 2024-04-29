@@ -11,7 +11,7 @@ export async function createComment(formValues) {
     return Promise.resolve(resp);
   } catch (error) {
     console.error(error);
-    addToast("Failed!", prettifyErrors(error), "danger");
+    addToast("失败!", prettifyErrors(error), "danger");
     return Promise.reject(error);
   }
 }

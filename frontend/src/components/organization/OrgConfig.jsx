@@ -45,7 +45,7 @@ export default function OrgConfig() {
 
   // page title
   useTitle(
-    `IntelOwl | Organization ${
+    `IntelOwl | 组织 ${
       organization?.name ? `(${organization?.name})` : ""
     } config`,
     { restoreOnUnmount: true },
@@ -62,10 +62,10 @@ export default function OrgConfig() {
               <Alert color="secondary" className="mt-3 mx-auto">
                 <section>
                   <h5 className="text-warning text-center">
-                    You are neither the owner not the admin of any organization.
+                    您既不是任何组织的所有者，也不是其管理者.
                   </h5>
                   <p className="text-center">
-                    You can choose to create a new organization.
+                    您可以选择创建一个新组织.
                   </p>
                 </section>
                 <section className="text-center">
@@ -76,10 +76,10 @@ export default function OrgConfig() {
           );
         return (
           <Container>
-            <h4>{organization.name}&apos;s plugin configuration</h4>
+            <h4>{organization.name}的插件配置</h4>
             <span className="text-muted">
-              Note: Your <Link to="/me/config">plugin configuration</Link>{" "}
-              overrides your organization&apos;s configuration.
+              注意: 你的 <Link to="/me/config">插件配置</Link>{" "}
+              覆盖你的组织配置.
             </span>
             <ConfigContainer
               filterFunction={(item) => item.organization}
@@ -98,10 +98,10 @@ export default function OrgConfig() {
               <Alert color="secondary" className="mt-3 mx-auto">
                 <section>
                   <h5 className="text-warning text-center">
-                    You are not owner of any organization.
+                    你不是任何组织的所有者.
                   </h5>
                   <p className="text-center">
-                    You can choose to create a new organization.
+                    你可以选择创建一个新组织.
                   </p>
                 </section>
                 <section className="text-center">

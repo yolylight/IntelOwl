@@ -35,7 +35,7 @@ const onFormValidate = (values) => {
 function TagNew(inputVal) {
   return (
     <span>
-      Create New Tag: &nbsp;
+      创建新标签: &nbsp;
       <JobTag tag={{ label: inputVal, color: "#1655D3" }} />
     </span>
   );
@@ -85,7 +85,7 @@ export function TagSelectInput(props) {
               ) : (
                 <MdEdit
                   className="center pointer"
-                  title="edit"
+                  title="编辑"
                   onClick={() => setTagToEdit(tag)}
                 />
               ),
@@ -103,7 +103,7 @@ export function TagSelectInput(props) {
         { value: newTag, label: <JobTag tag={newTag} /> },
       ]);
     } catch (err) {
-      addToast("Failed!", err.parsedMsg.toString(), "danger");
+      addToast("失败!", err.parsedMsg.toString(), "danger");
     }
   };
   const onChange = (selectedOpts, { action }) => {
@@ -150,7 +150,7 @@ function TagForm(props) {
           : await createTag(values.label, values.color);
         setTimeout(() => onFormSuccess(tagToEdit, newTag), 250); // fake delay for better UX
       } catch (error) {
-        addToast("Failed!", error.parsedMsg.toString(), "danger");
+        addToast("失败!", error.parsedMsg.toString(), "danger");
       } finally {
         formik.setSubmitting(false);
       }

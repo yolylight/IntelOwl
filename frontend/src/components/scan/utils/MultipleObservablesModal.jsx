@@ -56,12 +56,12 @@ export function MultipleObservablesModal(props) {
       keyboard={false}
       scrollable
       backdrop="static"
-      labelledBy="Load Multiple Observables"
+      labelledBy="加载多个观测值"
       style={{ minWidth: "70%" }}
       {...rest}
     >
       <ModalHeader className="bg-tertiary" toggle={toggle}>
-        Load Multiple Observables
+        加载多个观测值
       </ModalHeader>
       <ModalBody
         className="d-flex-column bg-body"
@@ -74,7 +74,7 @@ export function MultipleObservablesModal(props) {
             style={{ width: "60%" }}
           >
             <small className="text-muted mb-2">
-              Enter any text to extract observables for further lookup.
+              输入任何文本以提取观测值，供进一步查询.
             </small>
             <Input
               id="load_multiple_observables-textArea"
@@ -87,13 +87,13 @@ export function MultipleObservablesModal(props) {
           </ContentSection>
           {/* lateral menu with the extracted observables */}
           <ContentSection className="ms-2 bg-darker" style={{ width: "40%" }}>
-            <h5 className="text-accent">Extracted observables</h5>
+            <h5 className="text-accent">提取的观测值</h5>
             <div
               className="ps-4 pt-1 my-2"
               style={{ height: "600px", overflowY: "auto" }}
             >
               {Object.values(extractedObservables).flat().length === 0 ? (
-                <small className="text-muted">No observable found.</small>
+                <small className="text-muted">未找到观测值.</small>
               ) : (
                 Object.entries(extractedObservables).map(([key, iocs]) => (
                   <div>
@@ -118,7 +118,7 @@ export function MultipleObservablesModal(props) {
             disabled={Object.values(extractedObservables).flat().length === 0}
             onClick={saveAndCloseModal}
           >
-            Extract
+            提取
           </Button>
         </div>
       </ModalBody>

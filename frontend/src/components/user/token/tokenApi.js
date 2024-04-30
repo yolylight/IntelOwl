@@ -9,10 +9,10 @@ import { APIACCESS_BASE_URI } from "../../../constants/apiURLs";
 async function createNewToken() {
   try {
     const resp = await axios.post(APIACCESS_BASE_URI);
-    addToast("Generated new API key for you!", null, "success", true);
+    addToast("为您生成新的 API 密钥!", null, "success", true);
     return resp;
   } catch (error) {
-    addToast("Failed!", error.parsedMsg.toString(), "danger", true);
+    addToast("失败!", error.parsedMsg.toString(), "danger", true);
     return Promise.reject(error);
   }
 }
@@ -20,10 +20,10 @@ async function createNewToken() {
 async function deleteToken() {
   try {
     const resp = await axios.delete(APIACCESS_BASE_URI);
-    addToast("API key was deleted!", null, "success", true);
+    addToast("API密钥已删除!", null, "success", true);
     return resp;
   } catch (error) {
-    addToast("Failed!", error.parsedMsg.toString(), "danger", true);
+    addToast("失败!", error.parsedMsg.toString(), "danger", true);
     return Promise.reject(error);
   }
 }

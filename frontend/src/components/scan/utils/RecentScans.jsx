@@ -37,7 +37,7 @@ function RecentScansCard({
           {title}
         </span>
         <small className="pt-1 text-secondary" style={{ fontSize: "0.75rem" }}>
-          score: {importance}
+          得分: {importance}
         </small>
       </CardHeader>
       <CardBody
@@ -49,13 +49,13 @@ function RecentScansCard({
       >
         <div className="d-flex flex-column col-8 px-2">
           <small>
-            Playbook:{" "}
+            剧本:{" "}
             <small className="text-accent">
-              {playbook || "Custom analysis"}
+              {playbook || "自定义分析"}
             </small>
           </small>
           <small>
-            Finished:{" "}
+            已完成:{" "}
             <small>
               <DateHoverable
                 className="text-accent"
@@ -71,7 +71,7 @@ function RecentScansCard({
             TLP: <small className="text-accent">{tlp}</small>
           </small>
           <small>
-            User: <small className="text-accent">{user}</small>
+            用户: <small className="text-accent">{user}</small>
           </small>
         </div>
       </CardBody>
@@ -161,7 +161,7 @@ export default function RecentScans({ classification, param }) {
         <div>
           <div className="d-flex justify-content-between my-4 align-items-end">
             <div className="d-flex justify-content-between align-items-center">
-              <h5 className="fw-bold mb-0 me-2">Recent Scans</h5>
+              <h5 className="fw-bold mb-0 me-2">最近扫描</h5>
               <MdInfoOutline id="recentscans-info-icon" />
               <UncontrolledTooltip
                 target="recentscans-info-icon"
@@ -170,15 +170,14 @@ export default function RecentScans({ classification, param }) {
                 innerClassName="p-2 text-start text-nowrap md-fit-content"
               >
                 <ul>
-                  <li>Observable: scans up to 14 days ago</li>
-                  <li>File: scans up to 60 days ago</li>
+                  <li>观测值: 14天之前扫描</li>
+                  <li>文件: 60 天前的扫描</li>
                 </ul>
-                If no observable or file has been inserted, recent scans are
-                related to the user and not the organization
+                如果没有插入任何可观察对象或文件，则最近的扫描与用户而非组织有关
               </UncontrolledTooltip>
             </div>
             <small className="mx-2 text-gray">
-              {allRecentScans?.length} total
+              总计{allRecentScans?.length}
             </small>
           </div>
           <Loader
@@ -199,7 +198,7 @@ export default function RecentScans({ classification, param }) {
                     />
                   ))
                 ) : (
-                  <small className="text-gray">No recent scans available</small>
+                  <small className="text-gray">没有最近扫描</small>
                 )}
               </div>
             )}

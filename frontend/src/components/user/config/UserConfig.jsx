@@ -7,19 +7,19 @@ import ConfigContainer from "./ConfigContainer";
 export default function UserConfig() {
   console.debug("UserConfigPage rendered!");
 
-  useTitle("IntelOwl | Config", {
+  useTitle("IntelOwl | 配置", {
     restoreOnUnmount: true,
   });
 
   return (
     <Container>
-      <h4>Your plugin configuration</h4>
+      <h4>你的插件配置</h4>
       <span className="text-muted">
-        Note: Your plugin configuration overrides your{" "}
+        注意：您的插件配置会覆盖您的 {" "}
         <Link to="/me/organization/config">
-          organization&apos;s configuration
+          组织配置
         </Link>{" "}
-        (if any).
+        (如有).
       </span>
       <ConfigContainer filterFunction={(item) => !item.organization} />
     </Container>

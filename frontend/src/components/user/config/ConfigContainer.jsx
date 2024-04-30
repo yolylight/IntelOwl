@@ -14,7 +14,7 @@ const routes = (filterFunction, additionalConfigData, editable) => [
     Title: () => (
       <span>
         <AiFillSetting />
-        &nbsp;Parameters
+        &nbsp;参数
       </span>
     ),
     Component: () => (
@@ -33,7 +33,7 @@ const routes = (filterFunction, additionalConfigData, editable) => [
     Title: () => (
       <span>
         <FaUserSecret />
-        &nbsp;Secrets
+        &nbsp;密钥
       </span>
     ),
     Component: () => (

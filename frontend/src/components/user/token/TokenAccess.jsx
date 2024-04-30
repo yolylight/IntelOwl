@@ -20,7 +20,7 @@ import { APIACCESS_BASE_URI, createNewToken, deleteToken } from "./tokenApi";
 function GenerateIcon() {
   return (
     <span>
-      Generate&nbsp;
+      生成&nbsp;
       <IoMdAdd />
     </span>
   );
@@ -53,16 +53,16 @@ export default function TokenAccess() {
       message: (
         <div>
           <p className="text-warning fst-italic">
-            Note: This is an irreversible operation.
+            注意：这是一个不可逆的操作
           </p>
           <p>
-            Once deleted, you cannot use this API key to access IntelOwl&apos;s
-            API. However, you will be able to generate a new one.
+            一旦删除，您将无法使用此 API 密钥访问 IntelOwl
+            API. 不过，您可以生成一个新的.
           </p>
-          Are you sure you wish to proceed ?
+          你确定要继续吗 ?
         </div>
       ),
-      confirmText: "Yes",
+      confirmText: "是",
     });
     if (answer) {
       try {
@@ -85,12 +85,12 @@ export default function TokenAccess() {
           {/* API key details */}
           <Row className="d-flex g-0">
             <Col sm={6} lg={3}>
-              <small className="text-muted me-1">Created</small>
+              <small className="text-muted me-1">已创建</small>
               <DateHoverable
                 id="apikey__created"
                 value={respData?.created}
                 format="hh:mm a MMM do, yyyy"
-                title="Token create date"
+                title="令牌创建日期"
                 showAgo
               />
             </Col>
@@ -116,7 +116,7 @@ export default function TokenAccess() {
                   <IconButton
                     id="toggle-show-apikey-btn"
                     color="dark"
-                    title={tokenVisible ? "Hide API key" : "Show API Key"}
+                    title={tokenVisible ? "隐藏API KEY" : "显示API Key"}
                     className="ms-2 border border-dark"
                     Icon={tokenVisible ? MdVisibility : MdVisibilityOff}
                     onClick={() =>
@@ -125,7 +125,7 @@ export default function TokenAccess() {
                   />
                   <IconButton
                     id="delete-apikey-btn"
-                    title="Delete API key"
+                    title="删除API key"
                     outline
                     color="danger"
                     className="border border-dark"
@@ -142,11 +142,11 @@ export default function TokenAccess() {
       renderError={() =>
         error?.response?.status === 404 ? (
           <Alert color="dark" className="col-md-6 col-lg-3 mx-auto text-center">
-            <h5 className="text-warning">No active API key</h5>
+            <h5 className="text-warning">无可用API Key</h5>
             <IconButton
               id="create-apikey-btn"
               color="tertiary"
-              title="Click to generate new API key"
+              title="点击生成新API KEY"
               titlePlacement="bottom"
               size="sm"
               Icon={GenerateIcon}

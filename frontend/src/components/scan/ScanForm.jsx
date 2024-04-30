@@ -153,14 +153,14 @@ export default function ScanForm() {
           values.files.length === 0 ||
           (values.files.length === 1 && values.files[0] === "")
         ) {
-          errors.files = "required";
+          errors.files = "必需";
         }
       } else if (
         values.observable_names.filter((observable) => observable.length)
           .length === 0
       ) {
         // we cannot return a list of errors (one for each observable), or isValid doesn't work
-        errors.observable_names = "observable(s) are required";
+        errors.observable_names = "观测值必需";
       }
 
       // check playbook or analyzer selections based on the user selection
@@ -168,17 +168,17 @@ export default function ScanForm() {
         values.analysisOptionValues === ScanTypes.playbooks &&
         Object.keys(values.playbook).length === 0
       ) {
-        errors.playbook = "playbook required";
+        errors.playbook = "剧本必需";
       }
       if (
         values.analysisOptionValues === ScanTypes.analyzers_and_connectors &&
         values.analyzers.length === 0
       ) {
-        errors.analyzers = "analyzers required";
+        errors.analyzers = "分析器必需";
       }
 
       if (!TlpChoices.includes(values.tlp)) {
-        errors.tlp = "Invalid choice";
+        errors.tlp = "选择不可用";
       }
 
       console.debug("formik validation errors");
@@ -230,7 +230,7 @@ export default function ScanForm() {
     React.useState(false);
 
   // page title
-  useTitle("IntelOwl | Scan", { restoreOnUnmount: true });
+  useTitle("IntelOwl | 扫描", { restoreOnUnmount: true });
 
   // router navigation
   const navigate = useNavigate();
@@ -584,8 +584,8 @@ export default function ScanForm() {
           <h3 id="scanpage" className="fw-bold">
             Scan&nbsp;
             {formik.values.classification === JobTypes.FILE
-              ? "Files"
-              : "Observables"}
+              ? "文件"
+              : "可观测对象"}
           </h3>
           <div className="mt-1">
             {/* Quota badges */}
@@ -636,8 +636,8 @@ export default function ScanForm() {
                       />
                       <Label check>
                         {jobType === JobTypes.OBSERVABLE
-                          ? "observable (domain, IP, URL, HASH, etc...)"
-                          : "file"}
+                          ? "可观测对象 (域名, IP, URL, HASH, 等...)"
+                          : "文件"}
                       </Label>
                     </Col>
                   </FormGroup>
@@ -675,7 +675,7 @@ export default function ScanForm() {
                       sm={3}
                       for="observable_name"
                     >
-                      Observable Value(s)
+                      可观测对象值
                     </Label>
                     <Col sm={9}>
                       <div className="invalid-feedback d-block">
@@ -736,7 +736,7 @@ export default function ScanForm() {
                           className="mx-auto rounded-1 mx-auto col-sm-auto"
                           onClick={() => arrayHelpers.push("")}
                         >
-                          <BsFillPlusCircleFill /> Add new value
+                          <BsFillPlusCircleFill /> 添加新值
                         </Button>
                       </Row>
                     </Col>
@@ -809,8 +809,8 @@ export default function ScanForm() {
                   }
                   title={
                     pluginsLoading
-                      ? "Runtime configuration is loading"
-                      : "Edit runtime configuration"
+                      ? "运行时配置正在加载"
+                      : "修改运行时配置"
                   }
                   titlePlacement="top"
                   size="sm"
@@ -858,7 +858,7 @@ export default function ScanForm() {
                 </FormGroup>
                 <FormGroup row>
                   <Label sm={3} for="connectors">
-                    Select Connectors
+                    选择连接器
                   </Label>
                   <Col sm={9}>
                     {!(connectorsLoading || connectorsError) && (
@@ -877,7 +877,7 @@ export default function ScanForm() {
             {scanType === ScanTypes.playbooks && (
               <FormGroup row className="mb-4">
                 <Label id="selectplugins" sm={3} htmlFor="playbook">
-                  Select Playbook
+                  选择剧本
                 </Label>
                 <Col sm={9}>
                   <Loader
@@ -934,7 +934,7 @@ export default function ScanForm() {
               color="primary"
               className="mt-2"
             >
-              <span className="me-1">Advanced settings</span>
+              <span className="me-1">高级设置</span>
               {isAdvancedSettingsOpen ? (
                 <IoIosArrowDropupCircle />
               ) : (
@@ -957,7 +957,7 @@ export default function ScanForm() {
                 </Col>
               </FormGroup>
               <FormGroup row className="mt-2">
-                <Label sm={3}>Scan configuration</Label>
+                <Label sm={3}>扫描配置</Label>
                 <Col sm={9}>
                   <FormGroup check key="checkchoice__check_all">
                     <Field
@@ -974,8 +974,7 @@ export default function ScanForm() {
                         for="checkchoice__check_all"
                         className="col-8"
                       >
-                        Do not execute if a similar analysis is currently
-                        running or reported without fails
+                        如果当前正在进行类似分析或报告未失败，则不要执行该分析
                       </Label>
                       <div className="col-4 d-flex align-items-center">
                         H:
@@ -997,11 +996,11 @@ export default function ScanForm() {
                             innerClassName="p-2 border border-info text-start text-nowrap md-fit-content"
                           >
                             <span>
-                              Max age (in hours) for the similar analysis.
+                              类似分析最大时间(小时).
                               <br />
-                              The default value is 24 hours (1 day).
+                              默认值是24小时(1天).
                               <br />
-                              Empty value takes all the previous analysis.
+                              空值包含之前所有的分析结果.
                             </span>
                           </UncontrolledTooltip>
                         </div>
@@ -1018,7 +1017,7 @@ export default function ScanForm() {
                       onChange={formik.handleChange}
                     />
                     <Label check for="checkchoice__force_new">
-                      Force new analysis
+                      强制重新分析
                     </Label>
                   </FormGroup>
                 </Col>
@@ -1040,7 +1039,7 @@ export default function ScanForm() {
                 outline
                 className="mx-auto rounded-0 col-sm-3 order-sm-5"
               >
-                {formik.isSubmitting && <Spinner size="sm" />}Start Scan
+                {formik.isSubmitting && <Spinner size="sm" />}开始扫描
               </Button>
             </FormGroup>
           </Form>

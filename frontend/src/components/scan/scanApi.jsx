@@ -116,12 +116,12 @@ function playbookToastBody(respData, warnings) {
   return (
     <div>
       <ContentSection className="text-light">
-        <strong>Playbooks:</strong>&nbsp;
+        <strong>剧本:</strong>&nbsp;
         {respData[0].playbook_running}
       </ContentSection>
       {warnings.length > 0 && (
         <ContentSection className="bg-accent text-darker">
-          <strong>Warnings:</strong>&nbsp;{warnings.join(", ")}
+          <strong>警告:</strong>&nbsp;{warnings.join(", ")}
         </ContentSection>
       )}
     </div>
@@ -132,18 +132,18 @@ function customToastBody(analyzersRunning, connectorsRunning, warnings) {
   return (
     <div>
       <ContentSection className="text-light">
-        <strong>Analyzers:</strong>&nbsp;
+        <strong>分析器:</strong>&nbsp;
         {Array.from(analyzersRunning)?.join(", ")}
       </ContentSection>
       {connectorsRunning.length > 0 && (
         <ContentSection className="text-light">
-          <strong>Connectors:</strong>&nbsp;
+          <strong>连接器:</strong>&nbsp;
           {Array.from(connectorsRunning).join(", ")}
         </ContentSection>
       )}
       {warnings.length > 0 && (
         <ContentSection className="bg-accent text-darker">
-          <strong>Warnings:</strong>&nbsp;{warnings.join(", ")}
+          <strong>警告:</strong>&nbsp;{warnings.join(", ")}
         </ContentSection>
       )}
     </div>
@@ -245,7 +245,7 @@ export async function createJob(
       });
       if (jobIdsAccepted.length > 0) {
         addToast(
-          `Created new Job with ID(s) #${jobIdsAccepted.join(", ")}!`,
+          `使用ID #${jobIdsAccepted.join(", ")}新建任务!`,
           toastBody,
           "success",
           true,
@@ -255,7 +255,7 @@ export async function createJob(
       // toast for existing jobs
       if (jobIdsExists.length > 0) {
         addToast(
-          `Reported existing Job with ID(s) #${jobIdsExists.join(", ")}!`,
+          `任务ID #${jobIdsExists.join(", ")}已存在报告!`,
           toastBody,
           "info",
           true,
@@ -268,12 +268,12 @@ export async function createJob(
       });
     }
     // else
-    addToast("Failed!", respData?.message, "danger");
+    addToast("失败!", respData?.message, "danger");
     const error = new Error(`job status ${respData.status}`);
     return Promise.reject(error);
   } catch (error) {
     console.error(error);
-    addToast("Failed!", prettifyErrors(error), "danger");
+    addToast("失败!", prettifyErrors(error), "danger");
     return Promise.reject(error);
   }
 }

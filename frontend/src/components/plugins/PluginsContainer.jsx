@@ -30,7 +30,7 @@ const routes = [
     Title: () => (
       <span id="Analyzers">
         <AiOutlineApi />
-        &nbsp;Analyzers
+        &nbsp;分析器
       </span>
     ),
     Component: () => (
@@ -45,7 +45,7 @@ const routes = [
     Title: () => (
       <span id="Connectors">
         <TiFlowChildren />
-        &nbsp;Connectors
+        &nbsp;连接器
       </span>
     ),
     Component: () => (
@@ -60,7 +60,7 @@ const routes = [
     Title: () => (
       <span id="Pivots">
         <PiGraphFill />
-        &nbsp;Pivots
+        &nbsp;枢纽
       </span>
     ),
     Component: () => (
@@ -75,7 +75,7 @@ const routes = [
     Title: () => (
       <span>
         <IoIosEye />
-        &nbsp;Visualizers
+        &nbsp;可视化
       </span>
     ),
     Component: () => (
@@ -90,7 +90,7 @@ const routes = [
     Title: () => (
       <span>
         <MdInput />
-        &nbsp;Ingestors
+        &nbsp;接收器
       </span>
     ),
     Component: () => (
@@ -105,7 +105,7 @@ const routes = [
     Title: () => (
       <span>
         <TiBook />
-        &nbsp;Playbooks
+        &nbsp;剧本
       </span>
     ),
     Component: () => (
@@ -166,7 +166,7 @@ export default function PluginsContainer() {
               className="me-2"
             >
               <BsPeopleFill className="me-2" /> Organization {organization.name}
-              &apos;s plugin config
+              &apos;s 插件配置
             </Button>
           </Link>
         ) : null}
@@ -182,7 +182,7 @@ export default function PluginsContainer() {
             onClick={() => null}
           >
             <BsSliders className="me-2" id="plugin_config" />
-            Your plugin config
+            你的插件配置
           </Button>
         </Link>
       </ContentSection>

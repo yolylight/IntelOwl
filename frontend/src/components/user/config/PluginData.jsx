@@ -33,15 +33,15 @@ function isJSON(str) {
 
 function isValidEntry(item, valueType) {
   if (!item.type) {
-    addToast("Invalid entry!", "Please select a type", "danger", true);
+    addToast("条目错误!", "请选择一个类型", "danger", true);
     return false;
   }
   if (!item.plugin_name) {
-    addToast("Invalid entry!", "Please select a plugin", "danger", true);
+    addToast("条目错误!", "请选择一个插件", "danger", true);
     return false;
   }
   if (!item.attribute) {
-    addToast("Invalid entry!", "Please select an attribute", "danger", true);
+    addToast("条目错误!", "请选择一个属性", "danger", true);
     return false;
   }
   if (!["str", "json"].includes(valueType))
@@ -231,25 +231,25 @@ export function PluginData({
                                     disabled={!configuration.edit}
                                     name={`entry[${index}].type`}
                                   >
-                                    <option value="">---Select Type---</option>
+                                    <option value="">---选择类型---</option>
                                     <option value={PluginTypesNumeric.ANALYZER}>
-                                      Analyzer
+                                      分析器
                                     </option>
                                     <option
                                       value={PluginTypesNumeric.CONNECTOR}
                                     >
-                                      Connector
+                                      连接器
                                     </option>
                                     <option value={PluginTypesNumeric.PIVOT}>
-                                      Pivot
+                                      枢纽
                                     </option>
                                     <option
                                       value={PluginTypesNumeric.VISUALIZER}
                                     >
-                                      Visualizer
+                                      可视化
                                     </option>
                                     <option value={PluginTypesNumeric.INGESTOR}>
-                                      Ingestor
+                                      采集器
                                     </option>
                                   </Field>
                                 </Col>
@@ -262,7 +262,7 @@ export function PluginData({
                                     name={`entry[${index}].plugin_name`}
                                   >
                                     <option value="">
-                                      ---Select Plugin Name---
+                                      ---选择插件名称---
                                     </option>
                                     {Object.values(plugins).map(
                                       (pluginElement) => (
@@ -304,7 +304,7 @@ export function PluginData({
                                       name={`entry[${index}].value`}
                                     >
                                       <option value="">
-                                        ---Select Value---
+                                        ---选择值---
                                       </option>
                                       <option value="true">True</option>
                                       <option value="false">False</option>
@@ -431,7 +431,7 @@ export function PluginData({
                               })
                             }
                           >
-                            <BsFillPlusCircleFill /> Add new entry
+                            <BsFillPlusCircleFill /> 添加新条目
                           </Button>
                         </Row>
                       ) : null}

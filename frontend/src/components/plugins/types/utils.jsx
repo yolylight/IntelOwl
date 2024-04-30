@@ -43,13 +43,13 @@ export function PluginInfoCard({ pluginInfo }) {
       </CardHeader>
       <CardBody className="bg-darker border-top border-tertiary">
         <div>
-          <h6 className="text-secondary">Description</h6>
+          <h6 className="text-secondary">描述</h6>
           <span>{markdownToHtml(pluginInfo?.description)}</span>
         </div>
         <div>
           <div>
             {pluginInfo.type === JobTypes.OBSERVABLE && (
-              <h6 className="text-secondary">Supported types</h6>
+              <h6 className="text-secondary">支持类型</h6>
             )}
             <ul>
               {pluginInfo?.observable_supported?.sort().map((value) => (
@@ -63,7 +63,7 @@ export function PluginInfoCard({ pluginInfo }) {
           </div>
           <div>
             {pluginInfo.type === JobTypes.FILE && (
-              <h6 className="text-secondary">Supported types</h6>
+              <h6 className="text-secondary">支持类型</h6>
             )}
             <ul>
               {pluginInfo?.supported_filetypes?.sort().map((value) => (
@@ -77,7 +77,7 @@ export function PluginInfoCard({ pluginInfo }) {
             {pluginInfo.supported_filetypes?.[0] === "everything" &&
               pluginInfo.not_supported_filetypes.length !== 0 && (
                 <div className="d-flex flex-column align-items-start">
-                  <strong>Except:</strong>
+                  <strong>预期:</strong>
                   <ul className="d-flex flex-column align-items-start">
                     {pluginInfo.not_supported_filetypes
                       ?.sort()
@@ -90,7 +90,7 @@ export function PluginInfoCard({ pluginInfo }) {
           </div>
           <div>
             {pluginInfo.config && (
-              <h6 className="text-secondary">Configuration</h6>
+              <h6 className="text-secondary">配置</h6>
             )}
             <ul>
               {pluginInfo.config &&
@@ -106,7 +106,7 @@ export function PluginInfoCard({ pluginInfo }) {
           </div>
           <div>
             {pluginInfo?.params && (
-              <h6 className="text-secondary">Parameters</h6>
+              <h6 className="text-secondary">参数</h6>
             )}
             <ul>
               {pluginInfo?.params &&
@@ -123,7 +123,7 @@ export function PluginInfoCard({ pluginInfo }) {
                 ))}
             </ul>
           </div>
-          {pluginInfo?.secrets && <h6 className="text-secondary">Secrets</h6>}
+          {pluginInfo?.secrets && <h6 className="text-secondary">密钥</h6>}
           <ul>
             {pluginInfo.secrets &&
               Object.entries(pluginInfo?.secrets).map(([key, value]) => (
@@ -138,7 +138,7 @@ export function PluginInfoCard({ pluginInfo }) {
                         color="info"
                         className="user-select-none"
                       >
-                        required
+                        必需
                       </Badge>
                     )}
                   </span>
@@ -151,7 +151,7 @@ export function PluginInfoCard({ pluginInfo }) {
           {pluginInfo?.verification && (
             <div>
               <h6 className="text-secondary">
-                Verification &nbsp;
+                验证 &nbsp;
                 <PluginVerificationIcon
                   pluginName={pluginInfo.name}
                   verification={pluginInfo.verification}
@@ -180,7 +180,7 @@ export function PluginInfoCard({ pluginInfo }) {
           )}
         {pluginInfo?.plugin_type === PluginsTypes.PLAYBOOK && (
           <div>
-            <h6 className="text-secondary">Advanced Settings &nbsp;</h6>
+            <h6 className="text-secondary">高级设置 &nbsp;</h6>
             <ul>
               {pluginInfo?.tlp && (
                 <li>
@@ -193,15 +193,14 @@ export function PluginInfoCard({ pluginInfo }) {
                   <strong>Scan mode:</strong>{" "}
                   {pluginInfo.scan_mode.toString() ===
                   ScanModesNumeric.FORCE_NEW_ANALYSIS
-                    ? "force new analysis"
-                    : `a new scan is not performed if there is a similar one finished in the last 
-                ${parseScanCheckTime(pluginInfo?.scan_check_time)} hours`}
+                    ? "强制重新分析"
+                    : `如果在过去 ${parseScanCheckTime(pluginInfo?.scan_check_time)} 小时内已完成类似扫描，则不会执行新扫描`}
                 </li>
               )}
               {pluginInfo?.tags.length > 0 && (
                 <li>
                   {" "}
-                  <strong>Tags:</strong>
+                  <strong>标签:</strong>
                   {pluginInfo.tags.map((tag) => (
                     <JobTag
                       key={`jobtable-tags-${tag.label}`}
@@ -313,7 +312,7 @@ function PlaybookPluginList({ pluginInfo, pluginType_ }) {
               Object.keys(pluginInfo?.runtime_configuration[plugin][pluginName])
                 .length !== 0 && (
                 <ul>
-                  <b>Parameters:</b>
+                  <b>参数:</b>
                   <li style={{ listStyleType: "square" }}>
                     <code>
                       {JSON.stringify(

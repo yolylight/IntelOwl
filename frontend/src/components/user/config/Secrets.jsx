@@ -10,7 +10,7 @@ export default function Secrets({
   filterFunction,
   editable,
 }) {
-  useTitle("IntelOwl | Config", {
+  useTitle("IntelOwl | 配置", {
     restoreOnUnmount: true,
   });
 

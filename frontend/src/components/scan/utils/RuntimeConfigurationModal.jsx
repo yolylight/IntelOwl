@@ -164,11 +164,11 @@ export function RuntimeConfigurationModal(props) {
       keyboard={false}
       scrollable
       backdrop="static"
-      labelledBy="Edit Runtime Configuration"
+      labelledBy="编辑运行时配置"
       {...rest}
     >
       <ModalHeader className="bg-tertiary" toggle={toggle}>
-        Edit Runtime Configuration
+        编辑运行时配置
       </ModalHeader>
       <ModalBody
         className="d-flex-start-start bg-body"
@@ -180,7 +180,7 @@ export function RuntimeConfigurationModal(props) {
           style={{ width: "45%", maxHeight: "590px", overflowY: "auto" }}
         >
           <small className="text-muted">
-            Note: Edit this only if you know what you are doing!
+            注意：只有当您知道自己在做什么时，才可编辑此内容!
           </small>
           <CustomJsonInput
             id="edit_runtime_configuration-modal"
@@ -202,7 +202,7 @@ export function RuntimeConfigurationModal(props) {
               color=""
               className="btn-link text-gray"
             >
-              Ignore changes & close
+              忽略更改 & 关闭
             </Button>
             <Button
               disabled={jsonInput?.error}
@@ -211,7 +211,7 @@ export function RuntimeConfigurationModal(props) {
               color="info"
               className="ms-2"
             >
-              Save & Close
+              保存 & 关闭
             </Button>
           </div>
         </ContentSection>
@@ -229,7 +229,7 @@ export function RuntimeConfigurationModal(props) {
                 ) : (
                   <h5 className="text-accent">
                     {key.toUpperCase()}:{" "}
-                    <small className="text-muted fst-italic"> null</small>
+                    <small className="text-muted fst-italic"> 空</small>
                   </h5>
                 )}
                 {Object.entries(selectedPluginsParams[key]).map(
@@ -250,7 +250,7 @@ export function RuntimeConfigurationModal(props) {
                           ))}
                         </ul>
                       ) : (
-                        <span className="text-muted fst-italic px-4">null</span>
+                        <span className="text-muted fst-italic px-4">空</span>
                       )}
                     </div>
                   ),

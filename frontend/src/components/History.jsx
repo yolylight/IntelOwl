@@ -38,7 +38,7 @@ const historyRoutes = [
     Title: () => (
       <span id="Investigations">
         <DiGitMerge />
-        &nbsp;Investigations
+        &nbsp;调查
       </span>
     ),
     Component: () => (
@@ -71,7 +71,7 @@ export default function History() {
     <Col className="d-flex justify-content-end">
       <Button id="createbutton" size="sm" color="darker" onClick={onClick}>
         <BsFillPlusCircleFill />
-        &nbsp;Create {isJobsTablePage ? "job" : "investigation"}
+        &nbsp;创建 {isJobsTablePage ? "任务" : "调查"}
       </Button>
     </Col>
   );

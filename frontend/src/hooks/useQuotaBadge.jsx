@@ -51,10 +51,10 @@ export default function useQuotaBadge() {
           fade={false}
           innerClassName="p-2 border border-info text-start text-nowrap md-fit-content"
         >
-          Your Submissions Quota.
+          您的提交配额.
           <ul>
-            <li>Month submissions doesn&apos;t include failed analysis.</li>
-            <li>Total submissions includes all analysis made by you ever.</li>
+            <li>月提交不包括失败的分析</li>
+            <li>提交总数包括您曾经进行的所有分析.</li>
           </ul>
         </UncontrolledTooltip>
       </>

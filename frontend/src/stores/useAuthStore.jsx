@@ -37,7 +37,7 @@ export const useAuthStore = create((set, get) => ({
         });
       } catch (err) {
         addToast(
-          "Error fetching user access information!",
+          "获取用户访问信息时出错!",
           err.parsedMsg,
           "danger",
         );
@@ -50,10 +50,10 @@ export const useAuthStore = create((set, get) => ({
           certegoUIenableProgressBar: false,
         });
         get().updateToken();
-        addToast("You've been logged in!", null, "success");
+        addToast("你已登录!", null, "success");
         return Promise.resolve(resp);
       } catch (err) {
-        addToast("Login failed!", err.parsedMsg, "danger", true);
+        addToast("登录失败!", err.parsedMsg, "danger", true);
         return Promise.reject(err);
       } finally {
         set({ loading: false });
@@ -66,7 +66,7 @@ export const useAuthStore = create((set, get) => ({
         // rmeove from the browser or it will persist next time we open a tab
         Cookies.remove(CSRF_TOKEN);
         set({ loading: false });
-        addToast("Logged out!", null, "info");
+        addToast("已登出!", null, "info");
       };
       return axios
         .post(`${AUTH_BASE_URI}/logout`, null, {
@@ -77,7 +77,7 @@ export const useAuthStore = create((set, get) => ({
     },
     forceLogout: () => {
       addToast(
-        "Invalid token. You will be logged out shortly",
+        "令牌无效。您将很快登出",
         null,
         "spinner",
         true,

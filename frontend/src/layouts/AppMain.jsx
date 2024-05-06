@@ -27,7 +27,7 @@ function ErrorHandler({ error }) {
           className="mt-5"
           error={{
             response: {
-              statusText: "Something went wrong. Please reload browser.",
+              statusText: "出错了。请刷新浏览器.",
             },
             parsedMsg: error.message,
           }}

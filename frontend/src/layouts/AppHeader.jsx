@@ -46,26 +46,26 @@ const authLinks = (
       <NavLink className="d-flex-start-center" end to="/dashboard">
         <AiOutlineDashboard />
         <span className="ms-1" id="dashboard-title">
-          Dashboard
+          仪表盘
         </span>
       </NavLink>
     </NavItem>
     <NavItem>
       <NavLink className="d-flex-start-center" end to="/history">
         <TbReport />
-        <span className="ms-1">History</span>
+        <span className="ms-1">历史</span>
       </NavLink>
     </NavItem>
     <NavItem>
       <NavLink className="d-flex-start-center" to="/plugins">
         <RiPlugFill />
-        <span className="ms-1">Plugins</span>
+        <span className="ms-1">插件</span>
       </NavLink>
     </NavItem>
     <NavItem>
       <NavLink className="d-flex-start-center" end to="/scan">
         <IoSearch />
-        <span className="ms-1">Scan</span>
+        <span className="ms-1">扫描</span>
       </NavLink>
     </NavItem>
   </>
@@ -80,7 +80,7 @@ const guestLinks = (
         end
         to="/login"
       >
-        Login
+        登录
       </RRNavLink>
     </NavItem>
     <NavItem className="ms-lg-2">
@@ -90,7 +90,7 @@ const guestLinks = (
         end
         to="/register"
       >
-        Register
+        注册
       </RRNavLink>
     </NavItem>
   </>
@@ -110,7 +110,7 @@ function RightLinks({ handleClickStart, isAuthenticated }) {
             onClick={handleClickStart}
           >
             <RiGuideLine />
-            <span className="ms-1">Guide</span>
+            <span className="ms-1">向导</span>
           </button>
         </NavItem>
       )}
@@ -122,13 +122,13 @@ function RightLinks({ handleClickStart, isAuthenticated }) {
           rel="noopener noreferrer"
         >
           <RiBookReadFill />
-          <span className="ms-1">Docs</span>
+          <span className="ms-1">文档</span>
         </a>
       </NavItem>
       <Button id="social-button" size="sm" className="mx-2 btn-accent">
         <>
           <MdShare />
-          <span className="ms-1">Social</span>
+          <span className="ms-1">社交</span>
         </>
       </Button>
       <UncontrolledPopover
@@ -156,7 +156,7 @@ function RightLinks({ handleClickStart, isAuthenticated }) {
               rel="noopener noreferrer"
               className="btn-social my-1"
             >
-              <FaGithub /> Connect on Github{" "}
+              <FaGithub /> 连接Github{" "}
             </a>
           </div>
           <div>
@@ -233,7 +233,7 @@ function AppHeader() {
             <NavItem>
               <NavLink className="d-flex-start-center" end to="/">
                 <MdHome />
-                <span className="ms-1">Home</span>
+                <span className="ms-1">主页</span>
               </NavLink>
             </NavItem>
             {isAuthenticated && authLinks}

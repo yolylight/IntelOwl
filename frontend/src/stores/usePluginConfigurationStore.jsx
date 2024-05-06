@@ -198,15 +198,15 @@ export const usePluginConfigurationStore = create((set, get) => ({
       console.debug(resp);
       if (resp.data?.status)
         addToast(
-          `${PluginName} - health check: success`,
-          "It is up and running",
+          `${PluginName} - 健康检查: 成功`,
+          "正常运行",
           "success",
           true,
         );
       else
         addToast(
-          `${PluginName} - health check: warning`,
-          "It is NOT up",
+          `${PluginName} - 健康检查: 警告`,
+          "未运行",
           "warning",
           true,
         );
@@ -231,21 +231,21 @@ export const usePluginConfigurationStore = create((set, get) => ({
       console.debug(resp);
       if (resp.data?.status)
         addToast(
-          "Plugin pull: success",
-          `${PluginName} updated`,
+          "插件拉取: 成功",
+          `${PluginName} 已更新`,
           "success",
           true,
         );
       else
         addToast(
-          "Plugin pull: warning",
-          `${PluginName} pull failed`,
+          "插件拉取: 警告",
+          `${PluginName} 拉取失败`,
           "warning",
           true,
         );
       return Promise.resolve(resp.status);
     } catch (error) {
-      addToast("Plugin pull: failed", prettifyErrors(error), "danger", true);
+      addToast("插件拉取: 失败", prettifyErrors(error), "danger", true);
       return error.response.status;
     }
   },
@@ -254,10 +254,10 @@ export const usePluginConfigurationStore = create((set, get) => ({
       const response = await axios.delete(
         `${PLAYBOOKS_CONFIG_URI}/${playbook}`,
       );
-      addToast(`${playbook} deleted`, null, "info");
+      addToast(`${playbook} 已删除`, null, "info");
       return Promise.resolve(response);
     } catch (error) {
-      addToast("Failed!", prettifyErrors(error), "danger");
+      addToast("失败!", prettifyErrors(error), "danger");
       return null;
     }
   },
@@ -268,12 +268,12 @@ export const usePluginConfigurationStore = create((set, get) => ({
           `${API_BASE_URI}/${type}/${pluginName}`,
           { for_organization: true },
         );
-        addToast(`${pluginName} enabled for the organization`, null, "success");
+        addToast(`${pluginName} 已为组织启用`, null, "success");
         get().retrievePlaybooksConfiguration();
         return Promise.resolve(response);
       } catch (error) {
         addToast(
-          `Failed to enabled ${pluginName} for the organization`,
+          `为组织启用失败 ${pluginName} `,
           prettifyErrors(error),
           "danger",
           true,
@@ -285,11 +285,11 @@ export const usePluginConfigurationStore = create((set, get) => ({
       const response = await axios.delete(
         `${API_BASE_URI}/${type}/${pluginName}/organization`,
       );
-      addToast(`${pluginName} enabled for the organization`, null, "success");
+      addToast(`${pluginName} 已为组织启用`, null, "success");
       return Promise.resolve(response);
     } catch (error) {
       addToast(
-        `Failed to enabled ${pluginName} for the organization`,
+        `为组织启用失败 ${pluginName} `,
         prettifyErrors(error),
         "danger",
         true,
@@ -304,12 +304,12 @@ export const usePluginConfigurationStore = create((set, get) => ({
           `${API_BASE_URI}/${type}/${pluginName}`,
           { for_organization: false },
         );
-        addToast(`${pluginName} disabled for the organization`, null, "info");
+        addToast(`${pluginName} 已为组织禁用`, null, "info");
         get().retrievePlaybooksConfiguration();
         return Promise.resolve(response);
       } catch (error) {
         addToast(
-          `Failed to disabled ${pluginName} for the organization`,
+          `为组织禁用失败 ${pluginName} `,
           prettifyErrors(error),
           "danger",
           true,
@@ -321,11 +321,11 @@ export const usePluginConfigurationStore = create((set, get) => ({
       const response = await axios.post(
         `${API_BASE_URI}/${type}/${pluginName}/organization`,
       );
-      addToast(`${pluginName} disabled for the organization`, null, "info");
+      addToast(`${pluginName} 为组织禁用失败`, null, "info");
       return Promise.resolve(response);
     } catch (error) {
       addToast(
-        `Failed to disabled ${pluginName} for the organization`,
+        `为组织禁用失败 ${pluginName} `,
         prettifyErrors(error),
         "danger",
         true,

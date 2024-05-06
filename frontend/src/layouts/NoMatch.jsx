@@ -7,14 +7,14 @@ function NoMatch() {
   console.debug("NoMatch rendered!");
 
   // page title
-  useTitle("IntelOwl | 404: Not Found", { restoreOnUnmount: true });
+  useTitle("IntelOwl | 404: 未找到", { restoreOnUnmount: true });
 
   return (
     <Container className="d-flex flex-column center">
       <img src="https://http.cat/404" alt="404: Not Found" width="650px" />
       <br />
       <Link to="/" className="standout">
-        Go back to home page ?
+        返回主页 ?
       </Link>
     </Container>
   );

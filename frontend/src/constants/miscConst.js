@@ -4,11 +4,11 @@ export const JobResultSections = Object.freeze({
 });
 
 export const TLPDescriptions = Object.freeze({
-  CLEAR: "TLP: use all analyzers",
-  GREEN: "TLP: disable analyzers that could impact privacy",
+  CLEAR: "TLP: 使用所有分析器",
+  GREEN: "TLP: 禁用会影响隐私的分析器",
   AMBER:
-    "TLP: disable analyzers that could impact privacy and limit access to my organization",
-  RED: "TLP: disable analyzers that could impact privacy, limit access to my organization and do not use any external service",
+    "TLP: 禁用可能影响隐私和限制访问我的组织的分析器",
+  RED: "TLP: 禁用可能影响隐私的分析器，限制对我的组织的访问，不使用任何外部服务",
 });
 
 export const HACKER_MEME_STRING =

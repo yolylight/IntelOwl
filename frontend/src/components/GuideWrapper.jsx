@@ -15,12 +15,10 @@ export default function GuideWrapper() {
         <div id="guidebox">
           <h3>Guide</h3>
           <p>
-            Welcome to IntelOwls Guide for First Time Visitors! For further
-            questions you could either check out our{" "}
-            <a href="https://intelowl.readthedocs.io/en/latest/">docs</a> or
-            reach us out on{" "}
+            欢迎访问 IntelOwls 初次访客指南！如果您还有其他问题，请访问我们的{" "}
+            <a href="https://intelowl.readthedocs.io/en/latest/">文档</a> 或者在{" "}
             <a href="https://www.honeynet.org/gsoc/">
-              the official IntelOwl slack channel
+              官方频道联系我们
             </a>
           </p>
         </div>
@@ -34,10 +32,7 @@ export default function GuideWrapper() {
           <h3>Plugins</h3>
           <br />
           <p>
-            Plugins are the core modular components of IntelOwl that can be
-            easily added, changed and customized. The most important ones are
-            the Analyzers that allow to perform data extraction on the
-            observables and/or files that you would like to analyze.
+            插件是 IntelOwl 的核心模块化组件，可以方便地添加、更改和定制。其中最重要的是分析器，它可以对要分析的观测指标和/或文件进行数据提取.
           </p>
         </div>
       ),
@@ -47,11 +42,10 @@ export default function GuideWrapper() {
       target: "#pluginconfigbutton",
       content: (
         <div id="guidebox">
-          <h3>Plugin Configurations</h3>
-          <p>Write up your own plugin configuration!</p>
+          <h3>插件配置</h3>
+          <p>编写自己的插件配置!</p>
           <p>
-            Note: Some plugins work out-of-the-box, while others requires to be
-            configured (with API keys for instance).
+            注意：有些插件开箱即用，有些则需要配置（例如使用 API 密钥）。.
           </p>
         </div>
       ),
@@ -61,10 +55,9 @@ export default function GuideWrapper() {
       target: "#scanpage",
       content: (
         <div id="guidebox">
-          <h3>Scan Page</h3>
+          <h3>扫描页</h3>
           <p>
-            You could get started with analyzing various observables with just
-            three steps{" "}
+            只需三个步骤，您就可以开始分析各种观测值{" "}
           </p>
         </div>
       ),
@@ -74,7 +67,7 @@ export default function GuideWrapper() {
       target: "#selectobservable",
       content: (
         <div id="guidebox">
-          <p>Select/Add Observables </p>
+          <p>选择/添加 观测值 </p>
         </div>
       ),
       disableBeacon: true,
@@ -84,10 +77,8 @@ export default function GuideWrapper() {
       content: (
         <div id="guidebox">
           <p>
-            Select a Playbook.
-            <br /> Playbooks are designed to be easy to share sequence of
-            running Plugins (Analyzers/, Connectors, ...) on a particular kind
-            of observable.
+            选择一个剧本.
+            <br /> 剧本的设计目的是便于共享在特定类型的可观测对象上运行插件（分析器/、连接器......）的序列.
           </p>
         </div>
       ),
@@ -97,7 +88,7 @@ export default function GuideWrapper() {
       target: "#startScan",
       content: (
         <div id="guidebox">
-          <h3>Click to Start the Scan</h3>
+          <h3>点击开始扫描</h3>
         </div>
       ),
       disableBeacon: true,
@@ -106,10 +97,9 @@ export default function GuideWrapper() {
       target: "#jobsHistory",
       content: (
         <div id="guidebox">
-          <h3>Job History</h3>
+          <h3>任务历史</h3>
           <p>
-            Here you could see the list of all previous jobs and expand over the
-            details through clicking that particular job from the table
+            在此，您可以查看所有以前的工作列表，并通过点击表格中的特定工作来扩展详细信息
           </p>
         </div>
       ),
@@ -119,8 +109,8 @@ export default function GuideWrapper() {
       target: "#Dashboard_title",
       content: (
         <div id="guidebox">
-          <h3>Dashboard</h3>
-          <p>See previous job details here with charts and more</p>
+          <h3>仪表盘</h3>
+          <p>在此查看以前的工作详情，以及图表和更多信息</p>
         </div>
       ),
       disableBeacon: true,
@@ -129,8 +119,8 @@ export default function GuideWrapper() {
       target: "#Dashboard_timepicker",
       content: (
         <div id="guidebox">
-          <h3>Filter</h3>
-          <p>Filter by time to get details about previous jobs</p>
+          <h3>筛选器</h3>
+          <p>按时间筛选，了解以前工作的详细信息</p>
         </div>
       ),
       disableBeacon: true,

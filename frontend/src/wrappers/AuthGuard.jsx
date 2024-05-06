@@ -21,7 +21,7 @@ export default function AuthGuard({ children }) {
   // side effects
   React.useEffect(() => {
     if (!didJustLogout && !isAuthenticated && !loading) {
-      addToast("Login required to access the requested page.", null, "info");
+      addToast("访问请求的页面需要登录.", null, "info");
     }
   }, [didJustLogout, isAuthenticated, loading]);
 

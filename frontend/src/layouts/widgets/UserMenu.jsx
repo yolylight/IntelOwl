@@ -52,44 +52,44 @@ export default function UserMenu(props) {
       </DropdownToggle>
       <DropdownMenu end className="bg-dark" data-bs-popper>
         <DropdownItem text>
-          logged in as <b>{user?.username}</b>
+          作为<b>{user?.username}</b>登录?
         </DropdownItem>
         <DropdownItem divider />
         {/* Django Admin Interface */}
         {user?.is_staff && (
           <DropdownNavLink to="/admin/" target="_blank">
-            <IoMdSettings className="me-2" /> Django Admin Interface
+            <IoMdSettings className="me-2" /> Django 管理员界面
           </DropdownNavLink>
         )}
         {/* Invitations */}
         <DropdownNavLink to="/me/organization">
-          <BsPeopleFill className="me-2" /> Organization
+          <BsPeopleFill className="me-2" /> 组织
           {owner?.username === user.username && (
             <Badge className="mx-3" color="info">
-              Owner
+              拥有者
             </Badge>
           )}
           {owner?.username !== user.username && isUserAdmin(user.username) && (
             <Badge className="mx-3" color="info">
-              Admin
+              管理员
             </Badge>
           )}
         </DropdownNavLink>
         {/* API Access/Sessions */}
         <DropdownNavLink to="/me/api">
-          <IoMdKey className="me-2" /> API Access
+          <IoMdKey className="me-2" /> API访问
         </DropdownNavLink>
         {/* Change Password */}
         <DropdownNavLink to="/change-password">
-          <RiLockPasswordFill className="me-2" /> Change password
+          <RiLockPasswordFill className="me-2" /> 修改密码
         </DropdownNavLink>
         {/* Your plugin configuration */}
         <DropdownNavLink to="/me/config">
-          <BsSliders className="me-2" /> Your plugin configuration
+          <BsSliders className="me-2" /> 你的插件配置
         </DropdownNavLink>
         <DropdownItem divider />
         <DropdownNavLink to="/logout">
-          <FiLogOut className="me-2" /> Logout
+          <FiLogOut className="me-2" /> 登出
         </DropdownNavLink>
       </DropdownMenu>
     </UncontrolledDropdown>
